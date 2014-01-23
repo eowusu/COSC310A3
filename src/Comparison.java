@@ -7,7 +7,7 @@ public class Comparison {
 	public static boolean contains(ArrayList<String> list, String str){
 		boolean result = false;
 		for(int i = 0; i<list.size();i++){
-			if (str.equalsIgnoreCase(list.get(i))){
+			if (str.toLowerCase().contains(list.get(i).toLowerCase())){
 				result = true;
 				break;
 			}

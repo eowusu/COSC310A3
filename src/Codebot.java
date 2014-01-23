@@ -68,7 +68,7 @@ public class Codebot {
 		else if (Comparison.contains(negations, response)&&lastSaidType.equals("prompt")){
 			endSession();
 		}
-		else if (Comparison.contains(topics, response)&&lastSaidType.equals("inquiry")){
+		else if (Comparison.contains(topics, response)){
 			tutor(response);
 		}
 		else if (Comparison.contains(compliments, response)){
