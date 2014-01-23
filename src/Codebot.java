@@ -9,7 +9,7 @@ public class Codebot {
 
 	private ArrayList<String> greetings;
 	private ArrayList<String> closures;
-
+	private ArrayList<String> affirmations;
 	private ArrayList<String> prompts;
 	private Scanner scan;
 	
@@ -38,9 +38,9 @@ public class Codebot {
 	 * This method takes a string as an input and selects a valid response
 	 */
 	private void respond(String response) {
-		if (greetings.contains(response)){
+		if (Comparison.contains(greetings,response)){
 			prompt();
-		} else if (closures.contains(response)){
+		} else if (Comparison.contains(closures,response)){
 			endSession();
 		}else{
 			System.out.println("Sorry, I am not that smart...yet");
