@@ -19,7 +19,7 @@ public class Comparison {
 		String value;
 		if (str.charAt(str.length()-2)=='s'){
 			String singular = str.substring(0,str.length()-2);
-			value = map.get(singular);
+			value = map.get(singular+" ");
 		}
 		else{
 			value = map.get(str);

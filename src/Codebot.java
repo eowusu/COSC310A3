@@ -107,7 +107,7 @@ public class Codebot {
 		String value;
 		if (topic.charAt(topic.length()-2)=='s'){
 			String singular = topic.substring(0,topic.length()-2);
-			value = topics.get(singular);
+			value = topics.get(singular+" ");
 		}
 		else{
 			value = topics.get(topic);
