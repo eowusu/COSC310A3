@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -104,14 +105,24 @@ public class Codebot {
 	 * Provides the user help when given a topic
 	 */
 	private void tutor(String topic) {
-		String value;
-		if (topic.charAt(topic.length()-2)=='s'){
-			String singular = topic.substring(0,topic.length()-2);
-			value = topics.get(singular+" ");
+		boolean result = false;
+		Iterator<String> keySet = topics.keySet().iterator();
+		String currentKey = null;
+		Scanner topicscan;
+		while(keySet.hasNext() && !result){
+			currentKey = keySet.next();
+			topicscan = new Scanner(currentKey);
+			topicscan.useDelimiter(", *");
+			while(topicscan.hasNext()){
+				String currentString = topicscan.next().toLowerCase();
+				currentString = Punctuation.space(currentString);
+				if(topic.toLowerCase().contains(currentString)){
+					result = true;
+					break;
+				}
+			}
 		}
-		else{
-			value = topics.get(topic);
-		}
+		String value = topics.get(currentKey);
 		lastSaid = value;
 		lastSaidType = "tutor";
 		System.out.println(value);
