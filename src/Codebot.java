@@ -14,6 +14,9 @@ public class Codebot {
 	private ArrayList<String> inquiries;
 	private ArrayList<String> compliments;
 	private ArrayList<String> acknowledgements;
+	private ArrayList<String> adverbs;
+	private ArrayList<String> verbs;
+	private ArrayList<String> pronouns;
 	private HashMap<String,String> topics;
 	private Scanner scan;
 	private String lastSaid;
@@ -28,6 +31,9 @@ public class Codebot {
 		inquiries = Populate.inquiries();
 		compliments = Populate.compliments();
 		acknowledgements = Populate.acknowledgements();
+		adverbs = Populate.adverbs();
+		verbs = Populate.verbs();
+		pronouns = Populate.pronouns();
 		topics = Populate.topics();
 		scan = new Scanner(System.in);
 		lastSaid="";
@@ -97,7 +103,14 @@ public class Codebot {
 	 * Provides the user help when given a topic
 	 */
 	private void tutor(String topic) {
-		String value = topics.get(topic);
+		String value;
+		if (topic.charAt(topic.length()-1)=='s'){
+			String singular = topic.substring(0,topic.length()-1);
+			value = topics.get(singular);
+		}
+		else{
+			value = topics.get(topic);
+		}
 		lastSaid = value;
 		lastSaidType = "tutor";
 		System.out.println(value);

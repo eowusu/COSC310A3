@@ -154,6 +154,59 @@ public class Populate {
 		return temp;
 	}
 	
+	/*
+	 * This method populates the adverbs
+	 */
+	public static ArrayList<String> adverbs() {
+		ArrayList<String> temp = new ArrayList<String>();
+		Scanner adverber;
+		try {
+			adverber = new Scanner(new File("Adverbs.txt"));
+			adverber.useDelimiter(", *");
+			while (adverber.hasNext()){
+				temp.add(adverber.next());
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		return temp;
+	}
+	
+	/*
+	 * This method populates the verbs
+	 */
+	public static ArrayList<String> verbs() {
+		ArrayList<String> temp = new ArrayList<String>();
+		Scanner verber;
+		try {
+			verber = new Scanner(new File("Verbs.txt"));
+			verber.useDelimiter(", *");
+			while (verber.hasNext()){
+				temp.add(verber.next());
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		return temp;
+	}
+	
+	/*
+	 * This method populates the pronouns
+	 */
+	public static ArrayList<String> pronouns() {
+		ArrayList<String> temp = new ArrayList<String>();
+		Scanner pronouner;
+		try {
+			pronouner = new Scanner(new File("pronouns.txt"));
+			pronouner.useDelimiter(", *");
+			while (pronouner.hasNext()){
+				temp.add(pronouner.next());
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		return temp;
+	}
 	
 	/*
 	 * This method populates our topics
@@ -163,7 +216,7 @@ public class Populate {
 		Scanner topicer;
 		try {
 			topicer = new Scanner(new File("Topics.txt"));
-			topicer.useDelimiter(",~ *");
+			topicer.useDelimiter(",~ *\n*");
 			while (topicer.hasNext()){
 				String key = topicer.next();
 				String value = "";
