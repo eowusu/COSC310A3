@@ -126,7 +126,7 @@ public class Populate {
 		Scanner complimenter;
 		try {
 			complimenter = new Scanner(new File("Compliments.txt"));
-			complimenter.useDelimiter(",~ *");
+			complimenter.useDelimiter(", *");
 			while (complimenter.hasNext()){
 				temp.add(complimenter.next());
 			}
@@ -144,7 +144,7 @@ public class Populate {
 		Scanner acknowledgementer;
 		try {
 			acknowledgementer = new Scanner(new File("Acknowledgements.txt"));
-			acknowledgementer.useDelimiter(", *");
+			acknowledgementer.useDelimiter(",~ *");
 			while (acknowledgementer.hasNext()){
 				temp.add(acknowledgementer.next());
 			}
