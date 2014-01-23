@@ -1,0 +1,1 @@
+variables,~ Variables have a type.  This type can be a base type, such as int or double, or an Object such as String.  Variables also need to have a name such as 'number'.
