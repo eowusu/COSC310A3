@@ -49,8 +49,8 @@ public class Codebot {
 		String greeting = greetings.get(rand.nextInt(greetings.size()));
 		lastSaid = greeting;
 		lastSaidType = "greeting";
-		System.out.println(greeting);
-		String response = scan.nextLine();
+		System.out.println(greeting.substring(1));
+		String response = scan.nextLine() ;
 		respond(response);
 		
 	}
@@ -59,6 +59,7 @@ public class Codebot {
 	 * This method takes a string as an input and selects a valid response
 	 */
 	private void respond(String response) {
+		response = Punctuation.space(response);
 		if (Comparison.contains(greetings,response)){
 			prompt();
 		} 
@@ -93,7 +94,7 @@ public class Codebot {
 		String acknowledgement = acknowledgements.get(rand.nextInt(acknowledgements.size()));
 		lastSaid = acknowledgement;
 		lastSaidType = "acknowledgement";
-		System.out.println(acknowledgement);
+		System.out.println(acknowledgement.substring(1));
 		String response = scan.nextLine();
 		respond(response);
 		
@@ -104,8 +105,8 @@ public class Codebot {
 	 */
 	private void tutor(String topic) {
 		String value;
-		if (topic.charAt(topic.length()-1)=='s'){
-			String singular = topic.substring(0,topic.length()-1);
+		if (topic.charAt(topic.length()-2)=='s'){
+			String singular = topic.substring(0,topic.length()-2);
 			value = topics.get(singular);
 		}
 		else{
@@ -124,7 +125,7 @@ public class Codebot {
 	private void endSession() {
 		Random rand = new Random();
 		String closure = closures.get(rand.nextInt(closures.size()));
-		System.out.println(closure);	
+		System.out.println(closure.substring(1));	
 	}
 
 	/*
@@ -135,7 +136,7 @@ public class Codebot {
 		String prompt = prompts.get(rand.nextInt(prompts.size()));
 		lastSaid = prompt;
 		lastSaidType = "prompt";
-		System.out.println(prompt);
+		System.out.println(prompt.substring(1));
 		String response = scan.nextLine();
 		respond(response);
 	}
@@ -148,7 +149,7 @@ public class Codebot {
 		String inquiry = inquiries.get(rand.nextInt(inquiries.size()));
 		lastSaid = inquiry;
 		lastSaidType = "inquiry";
-		System.out.println(inquiry);
+		System.out.println(inquiry.substring(1));
 		String response = scan.nextLine();
 		respond(response);
 		

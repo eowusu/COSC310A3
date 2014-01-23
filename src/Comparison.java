@@ -11,18 +11,14 @@ public class Comparison {
 				result = true;
 				break;
 			}
-			else if (str.equalsIgnoreCase(list.get(i)+"s")){
-				result = true;
-				break;
-			}
 		}
 		return result;
 	}
 	
 	public static boolean contains(HashMap<String,String> map, String str){
 		String value;
-		if (str.charAt(str.length()-1)=='s'){
-			String singular = str.substring(0,str.length()-1);
+		if (str.charAt(str.length()-2)=='s'){
+			String singular = str.substring(0,str.length()-2);
 			value = map.get(singular);
 		}
 		else{

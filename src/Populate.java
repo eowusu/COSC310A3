@@ -19,7 +19,7 @@ public class Populate {
 			greeter = new Scanner(new File("Greetings.txt"));
 			greeter.useDelimiter(", *");
 			while (greeter.hasNext()){
-				temp.add(greeter.next());
+				temp.add(" "+greeter.next()+" ");
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -38,7 +38,7 @@ public class Populate {
 			closer = new Scanner(new File("Closures.txt"));
 			closer.useDelimiter(", *");
 			while (closer.hasNext()){
-				temp.add(closer.next());
+				temp.add(" " +closer.next()+ " ");
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -56,7 +56,7 @@ public class Populate {
 			prompter = new Scanner(new File("Prompts.txt"));
 			prompter.useDelimiter(", *");
 			while (prompter.hasNext()){
-				temp.add(prompter.next());
+				temp.add(" " +prompter.next()+" ");
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -74,7 +74,7 @@ public class Populate {
 			affirmationer = new Scanner(new File("Affirmations.txt"));
 			affirmationer.useDelimiter(", *");
 			while (affirmationer.hasNext()) {
-				temp.add(affirmationer.next());
+				temp.add(" "+affirmationer.next()+" ");
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -92,7 +92,7 @@ public class Populate {
 			negationer = new Scanner(new File("Negations.txt"));
 			negationer.useDelimiter(", *");
 			while (negationer.hasNext()){
-				temp.add(negationer.next());
+				temp.add(" "+negationer.next()+" ");
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -110,7 +110,7 @@ public class Populate {
 			inquirer = new Scanner(new File("Inquiries.txt"));
 			inquirer.useDelimiter(", *");
 			while (inquirer.hasNext()){
-				temp.add(inquirer.next());
+				temp.add(" "+inquirer.next()+" ");
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -128,7 +128,7 @@ public class Populate {
 			complimenter = new Scanner(new File("Compliments.txt"));
 			complimenter.useDelimiter(", *");
 			while (complimenter.hasNext()){
-				temp.add(complimenter.next());
+				temp.add(" "+complimenter.next()+" ");
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -146,7 +146,7 @@ public class Populate {
 			acknowledgementer = new Scanner(new File("Acknowledgements.txt"));
 			acknowledgementer.useDelimiter(",~ *");
 			while (acknowledgementer.hasNext()){
-				temp.add(acknowledgementer.next());
+				temp.add(" "+acknowledgementer.next()+" ");
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -164,7 +164,7 @@ public class Populate {
 			adverber = new Scanner(new File("Adverbs.txt"));
 			adverber.useDelimiter(", *");
 			while (adverber.hasNext()){
-				temp.add(adverber.next());
+				temp.add(" "+adverber.next()+" ");
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -182,7 +182,7 @@ public class Populate {
 			verber = new Scanner(new File("Verbs.txt"));
 			verber.useDelimiter(", *");
 			while (verber.hasNext()){
-				temp.add(verber.next());
+				temp.add(" "+verber.next()+" ");
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -200,7 +200,7 @@ public class Populate {
 			pronouner = new Scanner(new File("pronouns.txt"));
 			pronouner.useDelimiter(", *");
 			while (pronouner.hasNext()){
-				temp.add(pronouner.next());
+				temp.add(" "+pronouner.next()+" ");
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -218,7 +218,7 @@ public class Populate {
 			topicer = new Scanner(new File("Topics.txt"));
 			topicer.useDelimiter(",~ *\n*");
 			while (topicer.hasNext()){
-				String key = topicer.next();
+				String key = " "+topicer.next()+" ";
 				String value = "";
 				if(topicer.hasNext())
 					value = topicer.next();
