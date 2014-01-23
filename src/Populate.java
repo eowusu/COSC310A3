@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 
@@ -110,6 +111,65 @@ public class Populate {
 			inquirer.useDelimiter(", *");
 			while (inquirer.hasNext()){
 				temp.add(inquirer.next());
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		return temp;
+	}
+	
+	/*
+	 * This method populates the compliments
+	 */
+	public static ArrayList<String> compliments() {
+		ArrayList<String> temp = new ArrayList<String>();
+		Scanner complimenter;
+		try {
+			complimenter = new Scanner(new File("Compliments.txt"));
+			complimenter.useDelimiter(",~ *");
+			while (complimenter.hasNext()){
+				temp.add(complimenter.next());
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		return temp;
+	}
+	
+	/*
+	 * This method populates the acknowledgements
+	 */
+	public static ArrayList<String> acknowledgements() {
+		ArrayList<String> temp = new ArrayList<String>();
+		Scanner acknowledgementer;
+		try {
+			acknowledgementer = new Scanner(new File("Acknowledgements.txt"));
+			acknowledgementer.useDelimiter(", *");
+			while (acknowledgementer.hasNext()){
+				temp.add(acknowledgementer.next());
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		return temp;
+	}
+	
+	
+	/*
+	 * This method populates our topics
+	 */
+	public static HashMap<String,String> topics(){
+		HashMap<String,String> temp = new HashMap<String,String>();
+		Scanner topicer;
+		try {
+			topicer = new Scanner(new File("Topics.txt"));
+			topicer.useDelimiter(",~ *");
+			while (topicer.hasNext()){
+				String key = topicer.next();
+				String value = "";
+				if(topicer.hasNext())
+					value = topicer.next();
+				temp.put(key, value);
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

@@ -1,6 +1,5 @@
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -13,8 +12,12 @@ public class Codebot {
 	private ArrayList<String> negations;
 	private ArrayList<String> prompts;
 	private ArrayList<String> inquiries;
+	private ArrayList<String> compliments;
+	private ArrayList<String> acknowledgements;
+	private HashMap<String,String> topics;
 	private Scanner scan;
 	private String lastSaid;
+	private String lastSaidType;
 	
 	public Codebot(){
 		greetings = Populate.greetings();
@@ -23,8 +26,12 @@ public class Codebot {
 		affirmations = Populate.affirmations();
 		negations = Populate.negations();
 		inquiries = Populate.inquiries();
+		compliments = Populate.compliments();
+		acknowledgements = Populate.acknowledgements();
+		topics = Populate.topics();
 		scan = new Scanner(System.in);
 		lastSaid="";
+		lastSaidType="";
 		beginSession();
 	}
 	
@@ -35,6 +42,7 @@ public class Codebot {
 		Random rand = new Random();
 		String greeting = greetings.get(rand.nextInt(greetings.size()));
 		lastSaid = greeting;
+		lastSaidType = "greeting";
 		System.out.println(greeting);
 		String response = scan.nextLine();
 		respond(response);
@@ -48,11 +56,17 @@ public class Codebot {
 		if (Comparison.contains(greetings,response)){
 			prompt();
 		} 
-		else if (Comparison.contains(affirmations, response)&&Comparison.contains(prompts, lastSaid)){
+		else if (Comparison.contains(affirmations, response)&&lastSaidType.equals("prompt")){
 			inquire();
 		}
-		else if (Comparison.contains(negations, response)&&Comparison.contains(prompts, lastSaid)){
+		else if (Comparison.contains(negations, response)&&lastSaidType.equals("prompt")){
 			endSession();
+		}
+		else if (Comparison.contains(topics, response)&&lastSaidType.equals("inquiry")){
+			tutor(response);
+		}
+		else if (Comparison.contains(compliments, response)){
+			acknowledge();
 		}
 		else if (Comparison.contains(closures,response)){
 			endSession();
@@ -64,6 +78,32 @@ public class Codebot {
 		}
 	}
 	
+	
+	/*
+	 * This method acknowledges compliments
+	 */
+	private void acknowledge() {
+		Random rand = new Random();
+		String acknowledgement = acknowledgements.get(rand.nextInt(acknowledgements.size()));
+		lastSaid = acknowledgement;
+		lastSaidType = "acknowledgement";
+		System.out.println(acknowledgement);
+		String response = scan.nextLine();
+		respond(response);
+		
+	}
+
+	/*
+	 * Provides the user help when given a topic
+	 */
+	private void tutor(String topic) {
+		String value = topics.get(topic);
+		lastSaid = value;
+		lastSaidType = "tutor";
+		System.out.println(value);
+		String response = scan.nextLine();
+		respond(response);
+	}
 
 	/*
 	 * This method stops the ball from rolling
@@ -81,6 +121,7 @@ public class Codebot {
 		Random rand = new Random();
 		String prompt = prompts.get(rand.nextInt(prompts.size()));
 		lastSaid = prompt;
+		lastSaidType = "prompt";
 		System.out.println(prompt);
 		String response = scan.nextLine();
 		respond(response);
@@ -93,6 +134,7 @@ public class Codebot {
 		Random rand = new Random();
 		String inquiry = inquiries.get(rand.nextInt(inquiries.size()));
 		lastSaid = inquiry;
+		lastSaidType = "inquiry";
 		System.out.println(inquiry);
 		String response = scan.nextLine();
 		respond(response);
