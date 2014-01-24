@@ -66,6 +66,42 @@ public class Populate {
 	}
 	
 	/*
+	 * This method populates the list of topicprompts
+	 */
+	public static ArrayList<String> topicprompts() {
+		ArrayList<String> temp = new ArrayList<String>();
+		Scanner topicprompter;
+		try {
+			topicprompter = new Scanner(new File("Topicprompts.txt"));
+			topicprompter.useDelimiter(", *");
+			while (topicprompter.hasNext()){
+				temp.add(" " +topicprompter.next()+" ");
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		return temp;
+	}
+	
+	/*
+	 * This method populates the list of reprompts
+	 */
+	public static ArrayList<String> reprompts() {
+		ArrayList<String> temp = new ArrayList<String>();
+		Scanner reprompter;
+		try {
+			reprompter = new Scanner(new File("Reprompts.txt"));
+			reprompter.useDelimiter(", *");
+			while (reprompter.hasNext()){
+				temp.add(" " +reprompter.next()+" ");
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		return temp;
+	}
+	
+	/*
 	 * This method populates the list of affirmations
 	 */
 	public static ArrayList<String> affirmations() {
