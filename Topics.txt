@@ -1,19 +1,183 @@
 variable,~ Variables have a type. This type can be a base type, such as int or double, or an Object such as String.  Variables also need to have a name such as 'number'.,~
 
-array,~ An array is a container object that holds a fixed number of values of a single type. The length of an array is established when the array is created. After creation, its length is fixed.,~
+short,~ The short data type is a 16-bit integer. It has a minimum value of -32,768 and a maximum value of 32,767 (inclusive).,~
 
-byte,~ The byte data type is an 8-bit signed two's complement integer. It has a minimum value of -128 and a maximum value of 127 (inclusive). The byte data type can be useful for saving memory in large arrays, where the memory savings actually matters.,~
+int, integer, whole number, integ,~ The int data type is a 32-bit integer, which has a minimum value of -2^31 and a maximum value of 2^(31 - 1).,~
 
-short,~ The short data type is a 16-bit signed two's complement integer. It has a minimum value of -32,768 and a maximum value of 32,767 (inclusive). As with byte, the same guidelines apply: you can use a short to save memory in large arrays, in situations where the memory savings actually matters.,~
+long,~ The long data type is a 64-bit integer. It has a minimum value of -2^63 and a maximum value of 2^63 -1. Use this data type when you need a range of values wider than those provided by int.,~ 
 
-int, integer, whole number,~ By default, the int data type is a 32-bit signed two's complement integer, which has a minimum value of -2^31 and a maximum value of 2^31 -1.,~
+float,~ The float data type is a floating point or decimal number.,~
 
-long,~ The long data type is a 64-bit two's complement integer. The signed long has a minimum value of -2^63 and a maximum value of 2^63 -1. Use this data type when you need a range of values wider than those provided by int.,~ 
+double, doubl,~ The double data type is a floating point or decimal number. For decimal values, this data type is generally the default choice as it is more precise than float.,~
 
-float,~ The float data type is a single-precision 32-bit IEEE 754 floating point. As with the recommendations for byte and short, use a float (instead of double) if you need to save memory in large arrays of floating point numbers. This data type should never be used for precise values, such as currency. For that, you will need to use the java.math.BigDecimal class instead.,~
+string, sentence,~ The String class represents character strings. All string literals in Java programs, such as "abc", are implemented as instances of this class.,~
 
-double,~ The double data type is a double-precision 64-bit IEEE 754 floating point. For decimal values, this data type is generally the default choice. As mentioned above, this data type should never be used for precise values, such as currency.,~
+abstract,~ Abstract refers to a class that has no method bodies, only the headers.  This is useful when creating a parent class and you want all child classes to override these methods.,~
 
-boolean, true/false, true or false, true, false,~ The boolean data type has only two possible values: true and false. Use this data type for simple flags that track true/false conditions. This data type represents one bit of information, but its "size" isn't something that's precisely defined.,~
+accessors,~ Accessors are methods that are used to find the value of a private attribute in a class.,~
 
-char, character, letter,~ The char data type is a single 16-bit Unicode character. It has a minimum value of '\u0000' (or 0) and a maximum value of '\uffff' (or 65,535 inclusive).,~
+aggregation,~ Aggregation is used to describe classes with a 'has-a' relationship. For example, if a Car class has an instance of an Engine class then there is an aggregation relationship between Car and Engine.,~ 
+
+array, arrai,~ An array is a container object that holds a fixed number of values of a single type. The length of an array is established when the array is created.,~
+
+arraylist,~ An arraylist is an object that is used to store a collection of data.  The data must all be of one type but unlike with an array the size of the array list can change throughout use.,~
+
+assignment,~ Assignment is the process of giving a variable a value.  This is done using the assignment operator '='.,~
+
+binary,~ A number system using only 0's and 1's.  This is how all computers store data.,~
+
+binary search,~ A search that can find a value in a sorted list in O(log(n)) runtime.  The search starts in the middle and makes decisions based on if the desired value is greater than or less than the curent value in the list.,~
+
+bit,~ The smallest piece of information stored in a computer, can only be one of two values, 0 or 1.,~
+
+block,~ A code block is a segment of code enclosed by '{ }'.  This is useful for writing loops and conditionals with more than one line of code to be executed.,~
+
+boolean, true/false, true or false, true, false,~ The boolean data type has only two possible values: true and false. Use this data type for simple flags that track true/false conditions.,~
+
+break,~ This statement is used to exit a loop immediately without continuing until the predefined break condition is satisfied.,~
+
+byte,~ The byte data type is an 8-bit integer. It has a minimum value of -128 and a maximum value of 127 (inclusive). The byte data type can be useful for saving memory.,~
+
+catch,~ This statement is used in combination with a try statement to catch errors before they are thrown to the console.  You can add whatever error handling you want inside of the catch block.,~
+
+casting,~ Changing the type of an object to the type of a parent class.  For example, you can cast a String object to a type Object and store the result in an Object array.,~
+
+char, character, letter,~ The char data type is a single Unicode character.,~
+
+class,~ The blueprint from which objects are created.,~
+
+comment,~ A line in your code that the computer will ignore but can make it easier for humans to understand what is going on. To do this in Java use '//' and the rest of the line will be a comment.,~
+
+comparable
+compile
+compile-time
+compiler
+concatenation
+condition
+constant
+constructor
+continue (continue statement / break statements)
+counter
+color
+constant
+
+decimal
+decrement
+dependency
+dialogue box
+divide
+do statement
+double
+
+editor
+encapsulation
+enumerate
+error
+escape
+exception
+explicit
+
+finally clause
+float
+floating point
+frame
+
+graph
+graphic
+gui
+
+handling
+heap
+hierarchy
+
+identifier
+if-else statements
+image
+implicit
+import
+increment
+infinite recursion
+input
+integer
+internet
+interpreter
+intranet
+insertion sort
+instance
+instance variable
+iterator
+
+java
+
+late binding
+list
+linear search
+linked-List
+local variable
+loop
+
+main method
+math
+memory
+method
+multiply
+mutator
+
+nesting (nested loops and nested blocks)
+network
+
+operator
+output
+
+package
+panel
+parameter
+parsing
+pointer
+primary
+print
+println
+private
+protected
+
+queue
+
+radio button
+random
+recursion
+reserved words
+return
+run
+runtime
+
+scanner
+secondary
+selection sort
+shadowing variable
+software
+sort
+stack
+static
+string
+super
+switch
+syntax
+
+text field
+this statement (reference)
+throw
+traverse
+tree
+try
+
+unit test
+uml
+
+variable
+variable type
+visibility
+
+while statement
+white Spaces
+wrapper
+world wide web
