@@ -84,7 +84,7 @@ public class Codebot {
 			else if (Comparison.contains(compliments, response)){
 				acknowledge();
 			}
-			else if (Comparison.contains(adverbs,response)){
+			else if (Comparison.contains(adverbs,response)&&lastSaidType.equals("tutor")){
 				instruct(lastSaid);
 			}
 			else if (Comparison.contains(closures,response)){
