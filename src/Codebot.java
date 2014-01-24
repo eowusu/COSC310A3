@@ -64,30 +64,35 @@ public class Codebot {
 	 * This method takes a string as an input and selects a valid response
 	 */
 	private void respond(String response) {
-		response = Punctuation.space(response);
-		if (Comparison.contains(greetings,response)){
+		if (response.isEmpty()){
 			prompt();
-		} 
-		else if (Comparison.contains(affirmations, response)&&lastSaidType.equals("prompt")){
-			inquire();
-		}
-		else if (Comparison.contains(negations, response)&&lastSaidType.equals("prompt")){
-			endSession();
-		}
-		else if (Comparison.contains(topics, response)){
-			tutor(response);
-		}
-		else if (Comparison.contains(compliments, response)){
-			acknowledge();
-		}
-		else if (Comparison.contains(adverbs,response)){
-			instruct(lastSaid);
-		}
-		else if (Comparison.contains(closures,response)){
-			endSession();
 		}
 		else{
-			google(response);
+			response = Punctuation.space(response);
+			if (Comparison.contains(greetings,response)){
+				prompt();
+			} 
+			else if (Comparison.contains(affirmations, response)&&lastSaidType.equals("prompt")){
+				inquire();
+			}
+			else if (Comparison.contains(negations, response)&&lastSaidType.equals("prompt")){
+				endSession();
+			}
+			else if (Comparison.contains(topics, response)){
+				tutor(response);
+			}
+			else if (Comparison.contains(compliments, response)){
+				acknowledge();
+			}
+			else if (Comparison.contains(adverbs,response)){
+				instruct(lastSaid);
+			}
+			else if (Comparison.contains(closures,response)){
+				endSession();
+			}
+			else{
+				google(response);
+			}
 		}
 	}
 	
