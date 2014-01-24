@@ -8,12 +8,20 @@ import java.util.Scanner;
 
 
 public class Codebot {
+	/*
+	 * This class is responsible for handling all user interaction. It is the central class.
+	 */
 
+	/*
+	 * This is where our library gets stored into memory for fast access
+	 */
 	private ArrayList<String> greetings;
 	private ArrayList<String> closures;
 	private ArrayList<String> affirmations;
 	private ArrayList<String> negations;
 	private ArrayList<String> prompts;
+	private ArrayList<String> reprompts;
+	private ArrayList<String> topicprompts;
 	private ArrayList<String> inquiries;
 	private ArrayList<String> compliments;
 	private ArrayList<String> acknowledgements;
@@ -26,10 +34,15 @@ public class Codebot {
 	private String lastSaid;
 	private String lastSaidType;
 	
+	/*
+	 * This is our constructor. It populates the library and begins the session
+	 */
 	public Codebot(){
 		greetings = Populate.greetings();
 		closures = Populate.closures();
 		prompts = Populate.prompts();
+		reprompts = Populate.reprompts();
+		topicprompts = Populate.topicprompts();
 		affirmations = Populate.affirmations();
 		negations = Populate.negations();
 		inquiries = Populate.inquiries();
@@ -75,7 +88,7 @@ public class Codebot {
 				 */
 				prompt();
 			} 
-			else if (Comparison.contains(affirmations, response)&&lastSaidType.equals("prompt")){
+			else if (Comparison.contains(affirmations, response)&&(lastSaidType.equals("prompt")||lastSaidType.equals("reprompt"))){
 				/*
 				 * If codebot prompted them, i.e. "Do you want help?" and they respond with yes (or any other affirmation)
 				 * then codebot inquires as to what they need help with
@@ -96,6 +109,21 @@ public class Codebot {
 				 * in our library, codebot responds with the basic information about that topic
 				 */
 				tutor(response);
+			}
+			else if (Comparison.contains(negations, response)&&(lastSaidType.equals("tutor")||lastSaidType.equals("reprompt"))){
+				/*
+				 * If they negate our topicprompt (dont need additional help for a topic), prompt them
+				 */
+				if (lastSaidType.equals("tutor")){
+					reprompt();}
+				else {
+					endSession();}
+			}
+			else if (Comparison.contains(affirmations, response)&&lastSaidType.equals("tutor")){
+				/*
+				 * If they affirm our topicprompt (do need additional help for a topic), instruct them
+				 */
+				instruct(lastSaid);
 			}
 			else if (Comparison.contains(compliments, response)){
 				/*
@@ -124,7 +152,6 @@ public class Codebot {
 			}
 		}
 	}
-	
 	
 	/*
 	 * This method takes the user question and performs a google search in their default browser
@@ -159,8 +186,7 @@ public class Codebot {
 		String value = instructions.get(topic);
 		lastSaidType = "instruction";
 		System.out.println(value);
-		String response = scan.nextLine();
-		respond(response);
+		reprompt();
 		
 	}
 
@@ -183,29 +209,56 @@ public class Codebot {
 	 */
 	private void tutor(String topic) {
 		boolean result = false;
-		Iterator<String> keySet = topics.keySet().iterator();
+		Iterator<String> keySet = topics.keySet().iterator();	// returns an iterable list of topics from the hashmap
 		String currentKey = null;
 		Scanner topicscan;
-		while(keySet.hasNext() && !result){
+		while(keySet.hasNext() && !result){		//This will return each individual key to search through since some are comprise of multiple keywords
 			currentKey = keySet.next();
 			topicscan = new Scanner(currentKey);
 			topicscan.useDelimiter(", *");
-			while(topicscan.hasNext()){
+			while(topicscan.hasNext()){		//Once codebot has the whole key with all keywords for the topic, it looks for matches from what the user inputed
 				String currentString = topicscan.next().toLowerCase();
 				currentString = Punctuation.space(currentString);
 				if(topic.toLowerCase().contains(currentString)){
-					result = true;
+					result = true;		//if coedbot finds a match, it now knows the topic they were searching for and can use the key to find the instructions
 					break;
 				}
 			}
 		}
-		String value = topics.get(currentKey);
+		String value = topics.get(currentKey);	//this will look up the instructions to return to them to the user
 		lastSaid = currentKey;
 		lastSaidType = "tutor";
 		System.out.println(value);
+		topicprompt();
+
+	}
+	
+	/*
+	 * This method picks a random reprompt and prints it
+	 */
+	private void topicprompt() {
+		Random rand = new Random();
+		String topicprompt = topicprompts.get(rand.nextInt(topicprompts.size()));
+		System.out.println(topicprompt.substring(1));	
 		String response = scan.nextLine();
 		respond(response);
+		
 	}
+	
+
+	/*
+	 * This method asks if the user has any other questions
+	 */
+	private void reprompt() {
+		Random rand = new Random();
+		String reprompt = reprompts.get(rand.nextInt(reprompts.size()));
+		lastSaidType="reprompt";
+		System.out.println(reprompt.substring(1));	
+		String response = scan.nextLine();
+		respond(response);
+		
+	}
+
 
 	/*
 	 * This method stops the ball from rolling

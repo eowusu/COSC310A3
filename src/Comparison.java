@@ -5,6 +5,10 @@ import java.util.Scanner;
 
 
 public class Comparison {
+	/*
+	 * The purpose of this class is to search through the libraries to determine if a term is contained in
+	 * the given library
+	 */
 
 	/*
 	 * This method searches for a string in an arraylist, and returns if it is there or not
@@ -29,7 +33,7 @@ public class Comparison {
 		String currentKey = keySet.next();
 		Scanner scan = new Scanner(currentKey);
 		scan.useDelimiter(", *");
-		while(keySet.hasNext() && !result){
+		while(currentKey != null&& !result){
 			while(scan.hasNext()){
 				String currentString = scan.next().toLowerCase();
 				currentString = Punctuation.space(currentString);
@@ -38,9 +42,14 @@ public class Comparison {
 					break;
 				}
 			}
-			currentKey = keySet.next();
-			scan = new Scanner(currentKey);
-			scan.useDelimiter(", *");
+			if(keySet.hasNext()){
+				currentKey = keySet.next();
+				scan = new Scanner(currentKey);
+				scan.useDelimiter(", *");
+			}
+			else
+				currentKey = null;
+			
 		}
 		return result;
 	}

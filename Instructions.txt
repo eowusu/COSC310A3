@@ -18,4 +18,4 @@ boolean, true/false, true or false, true, false,~ Declare and initialize a boole
 
 char, character, letter,~ Declare and initialize a char like so. char letter = 'a'; Note the single brackets. chars also have number values, for instance saying char letter = 65; is the same as saying char letter = 'a';, since the number value of 'a' is 65.,~
 
-string, sentance,~ Declare and initialize a String like so. String str = "this is a string". You can also add strings together, and even add chars to strings, using the + operator. Such as String str = "this is a string" + 'a' + "blah blah blah".,~
+string, sentence,~ Declare and initialize a String like so. String str = "this is a string". You can also add strings together, and even add chars to strings, using the + operator. Such as String str = "this is a string" + 'a' + "blah blah blah".,~
