@@ -16,6 +16,7 @@ abstract,~ Abstract refers to a class that has no method bodies, only the header
 
 accessors,~ Accessors are methods that are used to find the value of a private attribute in a class.,~
 
+<<<<<<< HEAD
 aggregation,~ Aggregation is used to describe classes with a 'has-a' relationship. For example, if a Car class has an instance of an Engine class then there is an aggregation relationship between Car and Engine.,~ 
 
 array, arrai,~ An array is a container object that holds a fixed number of values of a single type. The length of an array is established when the array is created.,~
@@ -181,3 +182,8 @@ while statement
 white Spaces
 wrapper
 world wide web
+=======
+char, character, letter,~ The char data type is a single 16-bit Unicode character. It has a minimum value of '\u0000' (or 0) and a maximum value of '\uffff' (or 65,535 inclusive).,~
+
+string, sentence,~ The String class represents character strings. All string literals in Java programs, such as "abc", are implemented as instances of this class. The String class has many built-in methods that can be used with the string.,~
+>>>>>>> ec1a50a047966989e8e8abae9e24b80ab9d8267e

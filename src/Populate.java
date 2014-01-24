@@ -6,12 +6,13 @@ import java.util.Scanner;
 
 
 public class Populate {
+	/*
+	 * The purpose of this class is to put our library into RAM for fast access.
+	 */
 
 	/*
 	 * This method populates the list of greetings
 	 */
-
-
 	public static ArrayList<String> greetings() {
 		ArrayList<String> temp = new ArrayList<String>();
 		Scanner greeter;
@@ -57,6 +58,42 @@ public class Populate {
 			prompter.useDelimiter(", *");
 			while (prompter.hasNext()){
 				temp.add(" " +prompter.next()+" ");
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		return temp;
+	}
+	
+	/*
+	 * This method populates the list of topicprompts
+	 */
+	public static ArrayList<String> topicprompts() {
+		ArrayList<String> temp = new ArrayList<String>();
+		Scanner topicprompter;
+		try {
+			topicprompter = new Scanner(new File("Topicprompts.txt"));
+			topicprompter.useDelimiter(", *");
+			while (topicprompter.hasNext()){
+				temp.add(" " +topicprompter.next()+" ");
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		return temp;
+	}
+	
+	/*
+	 * This method populates the list of reprompts
+	 */
+	public static ArrayList<String> reprompts() {
+		ArrayList<String> temp = new ArrayList<String>();
+		Scanner reprompter;
+		try {
+			reprompter = new Scanner(new File("Reprompts.txt"));
+			reprompter.useDelimiter(", *");
+			while (reprompter.hasNext()){
+				temp.add(" " +reprompter.next()+" ");
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -222,6 +259,28 @@ public class Populate {
 				String value = "";
 				if(topicer.hasNext())
 					value = topicer.next();
+				temp.put(key, value);
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		return temp;
+	}
+	
+	/*
+	 * This method populates our instructions
+	 */
+	public static HashMap<String,String> instructions(){
+		HashMap<String,String> temp = new HashMap<String,String>();
+		Scanner instructioner;
+		try {
+			instructioner = new Scanner(new File("Instructions.txt"));
+			instructioner.useDelimiter(",~ *\n*");
+			while (instructioner.hasNext()){
+				String key = " "+instructioner.next()+" ";
+				String value = "";
+				if(instructioner.hasNext())
+					value = instructioner.next();
 				temp.put(key, value);
 			}
 		} catch (FileNotFoundException e) {
