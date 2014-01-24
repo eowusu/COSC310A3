@@ -5,6 +5,10 @@ import java.util.Scanner;
 
 
 public class Comparison {
+	/*
+	 * The purpose of this class is to search through the libraries to determine if a term is contained in
+	 * the given library
+	 */
 
 	/*
 	 * This method searches for a string in an arraylist, and returns if it is there or not

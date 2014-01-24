@@ -8,7 +8,13 @@ import java.util.Scanner;
 
 
 public class Codebot {
+	/*
+	 * This class is responsible for handling all user interaction. It is the central class.
+	 */
 
+	/*
+	 * This is where our library gets stored into memory for fast access
+	 */
 	private ArrayList<String> greetings;
 	private ArrayList<String> closures;
 	private ArrayList<String> affirmations;
@@ -26,6 +32,9 @@ public class Codebot {
 	private String lastSaid;
 	private String lastSaidType;
 	
+	/*
+	 * This is our constructor. It populates the library and begins the session
+	 */
 	public Codebot(){
 		greetings = Populate.greetings();
 		closures = Populate.closures();
@@ -183,23 +192,23 @@ public class Codebot {
 	 */
 	private void tutor(String topic) {
 		boolean result = false;
-		Iterator<String> keySet = topics.keySet().iterator();
+		Iterator<String> keySet = topics.keySet().iterator();	// returns an iterable list of topics from the hashmap
 		String currentKey = null;
 		Scanner topicscan;
-		while(keySet.hasNext() && !result){
+		while(keySet.hasNext() && !result){		//This will return each individual key to search through since some are comprise of multiple keywords
 			currentKey = keySet.next();
 			topicscan = new Scanner(currentKey);
 			topicscan.useDelimiter(", *");
-			while(topicscan.hasNext()){
+			while(topicscan.hasNext()){		//Once codebot has the whole key with all keywords for the topic, it looks for matches from what the user inputed
 				String currentString = topicscan.next().toLowerCase();
 				currentString = Punctuation.space(currentString);
 				if(topic.toLowerCase().contains(currentString)){
-					result = true;
+					result = true;		//if coedbot finds a match, it now knows the topic they were searching for and can use the key to find the instructions
 					break;
 				}
 			}
 		}
-		String value = topics.get(currentKey);
+		String value = topics.get(currentKey);	//this will look up the instructions to return to them to the user
 		lastSaid = currentKey;
 		lastSaidType = "tutor";
 		System.out.println(value);

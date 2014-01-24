@@ -6,12 +6,13 @@ import java.util.Scanner;
 
 
 public class Populate {
+	/*
+	 * The purpose of this class is to put our library into RAM for fast access.
+	 */
 
 	/*
 	 * This method populates the list of greetings
 	 */
-
-
 	public static ArrayList<String> greetings() {
 		ArrayList<String> temp = new ArrayList<String>();
 		Scanner greeter;
