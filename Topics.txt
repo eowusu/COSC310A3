@@ -18,4 +18,4 @@ boolean, true/false, true or false, true, false,~ The boolean data type has only
 
 char, character, letter,~ The char data type is a single 16-bit Unicode character. It has a minimum value of '\u0000' (or 0) and a maximum value of '\uffff' (or 65,535 inclusive).,~
 
-string, sentance,~ The String class represents character strings. All string literals in Java programs, such as "abc", are implemented as instances of this class. The String class has many built-in methods that can be used with the string.,~
+string, sentence,~ The String class represents character strings. All string literals in Java programs, such as "abc", are implemented as instances of this class. The String class has many built-in methods that can be used with the string.,~
