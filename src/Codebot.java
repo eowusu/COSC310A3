@@ -47,7 +47,7 @@ public class Codebot {
 	}
 	
 	/*
-	 * This method gets the ball rolling
+	 * This method gets the ball rolling. It will greet the user and then scan for their response
 	 */
 	private void beginSession() {
 		Random rand = new Random();
@@ -64,33 +64,62 @@ public class Codebot {
 	 * This method takes a string as an input and selects a valid response
 	 */
 	private void respond(String response) {
-		if (response.isEmpty()){
+		if (response.isEmpty()){			
 			prompt();
 		}
 		else{
-			response = Punctuation.space(response);
+			response = Punctuation.space(response);	//correctly format their response for searching through libraries
 			if (Comparison.contains(greetings,response)){
+				/*
+				 * If they greet codebot, codebot will reply with a prompt
+				 */
 				prompt();
 			} 
 			else if (Comparison.contains(affirmations, response)&&lastSaidType.equals("prompt")){
+				/*
+				 * If codebot prompted them, i.e. "Do you want help?" and they respond with yes (or any other affirmation)
+				 * then codebot inquires as to what they need help with
+				 */
 				inquire();
 			}
 			else if (Comparison.contains(negations, response)&&lastSaidType.equals("prompt")){
+				/*
+				 * If codebot prompted them, i.e. "Do you want help?" and they respond with no (or any other negation)
+				 * then they are done and codebot ends the session. Might want to confirm they are done before ending
+				 * the session
+				 */
 				endSession();
 			}
 			else if (Comparison.contains(topics, response)){
+				/*
+				 * Regardless of what was previously said, if they type a response that has a topic
+				 * in our library, codebot responds with the basic information about that topic
+				 */
 				tutor(response);
 			}
 			else if (Comparison.contains(compliments, response)){
+				/*
+				 * If they compliment codebot, codebot acknowledges the compliment
+				 */
 				acknowledge();
 			}
 			else if (Comparison.contains(adverbs,response)&&lastSaidType.equals("tutor")){
+				/*
+				 * If we tutored them, i.e. "integers are..." and they respond with how, or when, (or any other adverb)
+				 * then codebot provides further instruction on the topic
+				 */
 				instruct(lastSaid);
 			}
 			else if (Comparison.contains(closures,response)){
+				/*
+				 * If they say bye, or any other closure, codebot ends the session
+				 */
 				endSession();
 			}
 			else{
+				/*
+				 * In the worst case, codebot asks if they want it to look up the answer for them
+				 */
 				google(response);
 			}
 		}
@@ -105,7 +134,7 @@ public class Codebot {
 		System.out.println("Sorry, I am not that smart...yet\nWant me to search that for you?");
 		String newresponse = scan.nextLine();
 		newresponse = Punctuation.space(newresponse);
-		if (Comparison.contains(affirmations, newresponse)){
+		if (Comparison.contains(affirmations, newresponse)){ //if they say yes, search it
 			try {
 				String q = response.replace(' ', '+').substring(1,response.length()-1);
 				Desktop desktop = java.awt.Desktop.getDesktop();
@@ -117,7 +146,7 @@ public class Codebot {
 				}
 			prompt();
 		}
-		else{
+		else{ //otherwise prompt again
 			prompt();
 		}
 		
