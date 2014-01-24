@@ -1,3 +1,5 @@
+import java.awt.Desktop;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -19,6 +21,7 @@ public class Codebot {
 	private ArrayList<String> verbs;
 	private ArrayList<String> pronouns;
 	private HashMap<String,String> topics;
+	private HashMap<String,String> instructions;
 	private Scanner scan;
 	private String lastSaid;
 	private String lastSaidType;
@@ -36,6 +39,7 @@ public class Codebot {
 		verbs = Populate.verbs();
 		pronouns = Populate.pronouns();
 		topics = Populate.topics();
+		instructions = Populate.instructions();
 		scan = new Scanner(System.in);
 		lastSaid="";
 		lastSaidType="";
@@ -76,17 +80,56 @@ public class Codebot {
 		else if (Comparison.contains(compliments, response)){
 			acknowledge();
 		}
+		else if (Comparison.contains(adverbs,response)){
+			instruct(lastSaid);
+		}
 		else if (Comparison.contains(closures,response)){
 			endSession();
 		}
 		else{
-			System.out.println("Sorry, I am not that smart...yet");
-			String newresponse = scan.nextLine();
-			respond(newresponse);
+			google(response);
 		}
 	}
 	
 	
+	/*
+	 * This method takes the user question and performs a google search in their default browser
+	 * This is the worst case scenario of codebot not knowing what to do :(
+	 */
+	private void google(String response) {
+		System.out.println("Sorry, I am not that smart...yet\nWant me to search that for you?");
+		String newresponse = scan.nextLine();
+		newresponse = Punctuation.space(newresponse);
+		if (Comparison.contains(affirmations, newresponse)){
+			try {
+				String q = response.replace(' ', '+').substring(1,response.length()-1);
+				Desktop desktop = java.awt.Desktop.getDesktop();
+				URL oURL = new URL("https://www.google.com/#q="+q);
+				desktop.browse(oURL.toURI());
+				}
+			catch (Exception e) {
+				e.printStackTrace();
+				}
+			prompt();
+		}
+		else{
+			prompt();
+		}
+		
+	}
+
+	/*
+	 * This method provides further instruction based on the input topic
+	 */
+	private void instruct(String topic) {
+		String value = instructions.get(topic);
+		lastSaidType = "instruction";
+		System.out.println(value);
+		String response = scan.nextLine();
+		respond(response);
+		
+	}
+
 	/*
 	 * This method acknowledges compliments
 	 */
@@ -123,7 +166,7 @@ public class Codebot {
 			}
 		}
 		String value = topics.get(currentKey);
-		lastSaid = value;
+		lastSaid = currentKey;
 		lastSaidType = "tutor";
 		System.out.println(value);
 		String response = scan.nextLine();
@@ -163,7 +206,6 @@ public class Codebot {
 		System.out.println(inquiry.substring(1));
 		String response = scan.nextLine();
 		respond(response);
-		
 	}
 
 }
