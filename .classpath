@@ -1,42 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
-<<<<<<< HEAD
-=======
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/WolframAlphaJavaLibrary/WolframAlpha-1.1.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/commons-codec-1.9/commons-codec-1.9-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/commons-codec-1.9/commons-codec-1.9-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/commons-codec-1.9/commons-codec-1.9-test-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/commons-codec-1.9/commons-codec-1.9-tests.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/commons-codec-1.9/commons-codec-1.9.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/commons-logging-1.1.3/commons-logging-1.1.3-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/commons-logging-1.1.3/commons-logging-1.1.3-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/commons-logging-1.1.3/commons-logging-1.1.3-test-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/commons-logging-1.1.3/commons-logging-1.1.3-tests.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/commons-logging-1.1.3/commons-logging-1.1.3.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/commons-logging-1.1.3/commons-logging-adapters-1.1.3.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/commons-logging-1.1.3/commons-logging-api-1.1.3.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/commons-logging-1.1.3/commons-logging-tests.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/httpcomponents-client-4.3.2/lib/commons-codec-1.6.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/httpcomponents-client-4.3.2/lib/commons-logging-1.1.3.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/httpcomponents-client-4.3.2/lib/fluent-hc-4.3.2.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/httpcomponents-client-4.3.2/lib/httpclient-4.3.2.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/httpcomponents-client-4.3.2/lib/httpclient-cache-4.3.2.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/httpcomponents-client-4.3.2/lib/httpcore-4.3.1.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/httpcomponents-client-4.3.2/lib/httpmime-4.3.2.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/httpcomponents-core-4.3.1/lib/commons-cli-1.2.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/httpcomponents-core-4.3.1/lib/httpcore-4.3.1.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/httpcomponents-core-4.3.1/lib/httpcore-ab-4.3.1.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/httpcomponents-core-4.3.1/lib/httpcore-nio-4.3.1.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/commons-logging-1.1-2.3/commons-logging-1.1.3-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/commons-logging-1.1-2.3/commons-logging-1.1.3-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/commons-logging-1.1-2.3/commons-logging-1.1.3-test-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/commons-logging-1.1-2.3/commons-logging-1.1.3-tests.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/commons-logging-1.1-2.3/commons-logging-1.1.3.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/commons-logging-1.1-2.3/commons-logging-adapters-1.1.3.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/commons-logging-1.1-2.3/commons-logging-api-1.1.3.jar"/>
-	<classpathentry kind="lib" path="/Users/ethan/Downloads/commons-logging-1.1-2.3/commons-logging-tests.jar"/>
->>>>>>> f8cd30a4aa94a996bff59850beac2c1a910c4687
-	<classpathentry kind="output" path="bin"/>
+        <classpathentry kind="src" path="src"/>
+        <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+        <classpathentry kind="output" path="bin"/>
 </classpath>
