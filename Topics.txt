@@ -72,11 +72,11 @@ constant, constants,~ Constant is identifier that contains a value that cannot b
 
 constructor, constructors,~ Constructor is a special method in a class that is invoked when an object is instantiated from the class. Used to initialize the object.,~
 
-debugger, dubug, debugging,~ A debugger is a software tool that allows a programmer to step through an executing program and examine the value of variables at any point.,~
+debugger, dubug, debugging, debug,~ A debugger is a software tool that allows a programmer to step through an executing program and examine the value of variables at any point.,~
 
 decimal,~ Decimal is a base-10 number system, which you use in everyday life.,~
 
-decrement, decrement operator,~ Decrement operator is an operator, denoted by '--', is used as assignment operator. x++ stands for x=x+1. Eg. x=8 theny=--x will decrement the value of x to 7 then store it in y where as y=x-- will store 8 in y then decrement the value.,~
+decrement, decrement operator, decrements~ Decrement operator is an operator, denoted by '--', is used as assignment operator. x-- stands for x = x - 1. Eg. x = 8 then y = --x will decrement the value of x to 7 then store it in y where as y = x-- will store 8 in y then decrement the value of x.,~
 
 default,~ Default is a Java reserved word that is used to indicate the default case of a switch statement, used if no other cases match.,~
 
@@ -84,11 +84,7 @@ dependence, dependency,~ Dependence is a relationship between two classes where 
 
 design, designs, designing,~ Design is the plan for creating a program, which includes a specification of the classes and objects used and an expression of the important program algorithms.,~
 
-dialogue box,~ A dialogue box is a graphical window that pops up that allows brief, specific user interaction.,~
-
-digitize, digitizing,~ Digitize is the act of converting an analog representation into a digital one by breaking it down into pieces.,~
-
-do, do statement,~ A do statement is a Java reserved word that represents a repetition construct. A do statement is executed one or more times. See also for, while.,~
+do, do statement,~ A do statement is a Java reserved word that represents a repetition construct. A do statement is executed one or more times. Also ask about for, while.,~
 
 double, doubles,~ The double data type is a double-precision 64-bit IEEE 754 floating point. For decimal values, this data type is generally the default choice. As mentioned above, this data type should never be used for precise values, such as currency.,~
 
@@ -96,25 +92,19 @@ doubly linked list, doubly linked, doubly-linked,~ Doubly-linked list is a linke
 
 editor, editors,~ An editor is a software tool that allows the user to enter and store a file of characters on a computer. Often used by programmers to enter the source code of a program.,~
 
-element,~ An element is a value or object stored in another object such as an array.
+element,~ An element is a value or object stored in another object such as an array.,~
 
-encapsulation,~ Encapsulation is the characteristic of an object that limits access to the variables and methods contained in it. All interaction with an object occurs through a well-defined interface that supports a modular design.,~
+encapsulation,~ Encapsulation is the characteristic of an object that limits access to the variables and methods contained in it. All interaction with an object occurs through a defined interface.,~
 
-enum, enum type, enum types,~ An enum type is used to set a predefined constants. Eg. compass directions and days of the week,~
+error, errors,~ Any defect in a design or program. You may want to use the debugger to determine what is causing the error,~
 
-error, errors,~ Any defect in a design or program, that can be thrown and processed by special catch blocks.,~
-
-escape, escaping, escape sequence,~ Escape is a sequence of characters beginning with the backslash character (\), used to indicate a special situation when printing values. For example, the escape sequence \t specifies that a horizontal tab should be printed.,~
+escapes, escaping, escape sequences, escape,~ Escape is a sequence of characters beginning with the backslash character (\), used to indicate a special situation when printing values. For example, the escape sequence \t specifies that a horizontal tab should be printed.,~
 
 exception, exceptions,~ Exception is an object that can be thrown and processed by special catch blocks.,~
-
-exception handler,~ The exception handler handles the code in a catch clause of a try statement, executed when a particular type of exception is thrown.,~
 
 expression,~ Expression is a combination of operators and operands that produce a result.,~
 
 extends,~ Extends is a Java reserved word used to specify the parent class in the definition of a child class.,~
-
-explicit,~ Implicit means a certain task is done by the Java Virtual Machine or the tool, not the programmer. Eg. Programmer has to implement an explicit interface as it is not defined by Java.,~
 
 final,~ Final is a Java reserved word that serves as a modifier for classes, methods, and variables. A final class cannot be used to derive a new class. A final method cannot be overridden. A final variable is a constant.,~
 
