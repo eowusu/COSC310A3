@@ -42,13 +42,11 @@ byte, bytes,~ The byte data type is an 8-bit signed two's complement integer. It
 
 case, cases,~ Case is used as a Java reserved word that is used to identify each unique option in a switch statement.,~
 
-cast, casts, casting~ Cast is a Java operation expressed using a type or class name in parentheses to explicitly convert and return a value of one data type into another.,~
+cast, casts, casting, castings,~ Cast is a Java operation expressed using a type or class name in parentheses to explicitly convert and return a value of one data type into another.,~
 
 catch,~ Catch is a Java reserved word that is used to specify an exception handler, defined after a try block.,~
 
 char, chars, character, characters, letter,~ The char data type is a single 16-bit Unicode character. It has a minimum value of '\u0000' (or 0) and a maximum value of '\uffff' (or 65,535 inclusive).,~
-
-character string,~ A character sting is a series of ordered characters. Represented in Java using the String class and string literals such as "hello".,~
 
 checkbox, checkboxes, check box, check boxes,~ Check boxes are a GUI component that allows the user to set a boolean condition with a mouse click. A check box can be used alone or independently among other check boxes.,~
 
@@ -56,9 +54,9 @@ class, classes,~ A class is a blueprint of an object—the model that defines the 
 
 color, colors,~ Color can be controlled by accessing the Color class.  The Color class yields the class constants shown in the table below.  The expression Color.red gives the Color constant for red.,~
 
-comment, comments,~ A comment is a programming language construct that allows a programmer to embed humanreadable annotations into the source code.,~
+comment, comments,~ A comment is a programming language construct that allows a programmer to embed humanreadable annotations into the source code.  Comments are ignored by the computer when your program is run,~
 
-comparator,~ Comparator ,defined in java.util package, is used in interfaces which to implement sorting.
+comparator,~ Comparator ,defined in java.util package, is used in interfaces to implement sorting.
 
 comparable,~ Comparable is used to implement natural ordering of object. Java's API String, Date and wrapper classes implements Comparable interface.Its always good practice to override compareTo() for value objects.,~
 
@@ -68,29 +66,21 @@ compile-time error, compile time, compile time error,~ Compile time error is an 
 
 concatenation, string concatenation,~ Concatenation is the process of combining two strings together by the operand '+',~
 
-condition, conditions,~ A condition is a boolean expression used to determine whether the body of a selection or repetition statement should be executed.,~
+condition, conditions,~ A condition is a boolean expression used to determine whether the body of an if statement or a loop should be executed.,~
 
 constant, constants,~ Constant is identifier that contains a value that cannot be modified. Used to make code more readable and to facilitate changes. Defined in Java using the final modifier.,~
 
 constructor, constructors,~ Constructor is a special method in a class that is invoked when an object is instantiated from the class. Used to initialize the object.,~
 
-continue, continue statement,~ A continue statement without a label will re-execute from the condition the innermost loop. However, With a label continue will execute in the same way the correspondingly labeled loop. It is also used to escape deeply nested loops.,~
-
-counter, program counter,~ Program counter indicates the location of the next computer instruction to be executed.,~
-
-data structure, structures, data structures,~ Data Structure is a programming construct, either defined in the language or by a programmer, used to organize data into a format to facilitate access and processing. Arrays, linked lists, and stacks can all be considered data structures.,~
-
 debugger, dubug, debugging,~ A debugger is a software tool that allows a programmer to step through an executing program and examine the value of variables at any point.,~
 
-decimal,~ Decimal is a base-10 number system, which humans use in everyday life.,~
+decimal,~ Decimal is a base-10 number system, which you use in everyday life.,~
 
 decrement, decrement operator,~ Decrement operator is an operator, denoted by '--', is used as assignment operator. x++ stands for x=x+1. Eg. x=8 theny=--x will decrement the value of x to 7 then store it in y where as y=x-- will store 8 in y then decrement the value.,~
 
 default,~ Default is a Java reserved word that is used to indicate the default case of a switch statement, used if no other cases match.,~
 
 dependence, dependency,~ Dependence is a relationship between two classes where one class uses another.,~
-
-derived class, subclass, subclasses,~ A subclass is a class that is derived from another class, mainly a superclass.,~
 
 design, designs, designing,~ Design is the plan for creating a program, which includes a specification of the classes and objects used and an expression of the important program algorithms.,~
 
@@ -309,6 +299,10 @@ stack,~ An abstract data type that manages data in a last-in, first-out manner.,
 static,~ Static is a Java reserved word that serves as a modifier for methods and variables. A static method is also called a class method and can be referenced without an instance of the class. A static variable is also called a class variable and is common to all instances of the class.,~
 
 string, strings, sentence,~ The String class represents character strings. All string literals in Java programs, such as "abc", are implemented as instances of this class. The String class has many built-in methods that can be used with the string.,~
+
+structure, data structure, structures, data structures,~ Data Structure is a programming construct, either defined in the language or by a programmer, used to organize data into a format to facilitate access and processing. Arrays, linked lists, and stacks can all be considered data structures.,~
+
+subclass, subclasses,~ A subclass is a class that is derived from another class, mainly a superclass.,~
 
 super,~ Super is a Java reserved word that is a reference to the parent class of the object making the reference. Often used to invoke a parent’s constructor.,~
 
