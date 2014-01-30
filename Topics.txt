@@ -30,7 +30,7 @@ bit, bits,~ A bit is a binary digit, either 0 or 1.,~
 
 block, blocks,~ A block is a group of programming statements or line of codes that is inbetween a set of braces '{}'.,~
 
-boolean, true/false, true or false, true, false,~ The boolean data type has only two possible values: true and false. Use this data type for simple flags that track true/false conditions. This data type represents one bit of information, but its "size" isn't something that's precisely defined.,~
+boolean, true/false, true or false, true, false, booleans~ The boolean data type has only two possible values: true and false. Use this data type for simple flags that track true/false conditions. This data type represents one bit of information, but its "size" isn't something that's precisely defined.,~
 
 break, break statements,~ Break is a Java reserved word used to interrupt the flow of control by breaking out of the current loop or switch statement.,~
 
