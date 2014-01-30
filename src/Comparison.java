@@ -25,7 +25,7 @@ public class Comparison {
         }
         
         /*
-         * Comment this matt!
+         * Comment this matt!...no
          */
         public static boolean contains(HashMap<String,String> map, String str){
                 boolean result = false;

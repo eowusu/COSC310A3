@@ -1,14 +1,14 @@
 abstract,~ Abstract is a Java reserved word that serves as a modifier for classes, interfaces, and methods.,~
 
-accessor, accessors, accessor method, accessor methods, getter,~ An accessor method is used to return the value of a private field.,~
+accessor, accessors, accessor method, accessor methods, getter, getters,~ An accessor method is used to return the value of a private field.,~
 
 aggregate object, aggregate objects, aggregate, aggregates, aggregation,~ An object that contains variables that are references to other objects.,~
 
-algorithm, algorithms~ An algorithm is a step-by-step process for solving a problem. A program is based on one or more algorithms.,~
+algorithm, algorithms,~ An algorithm is a step-by-step process for solving a problem. A program is based on one or more algorithms.,~
 
-api, apis~ A set of classes that defines services for a programmer. Not part of the language itself, but often relied on to perform even basic tasks.,~
+api, apis,~ A set of classes that defines services for a programmer. Not part of the language itself, but often relied on to perform even basic tasks.,~
 
-append, append method, appends, appends method~ The append() method concatenates the string representation of any other type of data to the end of the invoking StringBuffer object.,~
+append, append method, appends, appends method,~ The append() method concatenates the string representation of any other type of data to the end of the invoking StringBuffer object.,~
 
 applet, applets,~ A Java program that is linked into an HTML document, then retrieved and executed using a Web browser, as opposed to a standalone Java application.,~
 
@@ -164,7 +164,7 @@ instance variable,~ A variable that must be referenced through a particular inst
 
 instantiate, instantiation,~ It is the act of creating an object from a class.,~
 
-int, integer, integers, whole number,~ By default, the int data type is a 32-bit signed two's complement integer, which has a minimum value of -2^31 and a maximum value of 2^31 -1.,~
+int, ints, integer, integers, whole number, whole numbers,~ By default, the int data type is a 32-bit signed two's complement integer, which has a minimum value of -2^31 and a maximum value of 2^31 -1.,~
 
 internet,~ Internet is the most pervasive wide-area network in the world; it has become the primary vehicle for computer-to-computer communication.,~
 
@@ -256,7 +256,7 @@ radio button,~ A GUI component that allows the user choose one of a set of optio
 
 recursion,~ The process of a method invoking itself, either directly or indirectly. Recursive algorithms sometimes provide elegant, though perhaps inefficient, solutions to a problem.,~
 
-repetition statement, do, for, while, loop, loops, iteration statement, iterative statement~ A programming construct that allows a set of statements to be executed repetitively as long as a particular condition is true. The body of the repetition statement should eventually make the condition false. Also called an iteration statement or loop.
+repetition statement, do-while, for, while, loop, loops, iteration statement, iterative statement,~ A programming construct that allows a set of statements to be executed repetitively as long as a particular condition is true. The body of the repetition statement should eventually make the condition false. Also called an iteration statement or loop.,~
 
 reserved words,~ A reserved word is a word that has special meaning in a programming language and cannot be used for any other purpose.,~
 

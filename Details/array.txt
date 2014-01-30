@@ -8,7 +8,7 @@ add,~ To add to an array specify the index you want to add to then assign the va
 
 access, get, see,~ To get the value at an index of an array you specify the index using '[]', for example, array[2] would return the element at the index 2, that is the same as the third index.,~
 
-declare,~ To declare and array you would use 'int[] arrayName;' to declare and int array.  You can make an array of any base type or object the same way.,~
+declare, make,~ To declare and array you would use 'int[] arrayName;' to declare and int array.  You can make an array of any base type or object the same way.,~
 
 fill, initialize,~ To initialize an array you can have it be a set set size and empty by using 'int[] arrayName = new int[10];'.  This would make an int array with size 10.  To fill an array right away you can use 'int[] arrayName = {1,2,3};'.  This would make an int array of size 3 and fill it with the given values.
 
