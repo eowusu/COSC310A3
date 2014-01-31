@@ -266,27 +266,26 @@ public class Populate {
                 }
                 return temp;
         }
-        
-        /*
-         * This method populates our instructions
-         */
-        public static HashMap<String,String> instructions(){
-                HashMap<String,String> temp = new HashMap<String,String>();
-                Scanner instructioner;
-                try {
-                        instructioner = new Scanner(new File("Instructions.txt"));
-                        instructioner.useDelimiter(",~ *\n*");
-                        while (instructioner.hasNext()){
-                                String key = " "+instructioner.next()+" ";
-                                String value = "";
-                                if(instructioner.hasNext())
-                                        value = instructioner.next();
-                                temp.put(key, value);
-                        }
-                } catch (FileNotFoundException e) {
-                        e.printStackTrace();
-                }
-                return temp;
-        }
+
+		public static HashMap<String,String> details(String firstword) {
+			if(firstword.charAt(firstword.length()-1) == ',')
+				firstword = firstword.substring(0, firstword.length()-1);
+			HashMap<String,String> temp = new HashMap<String,String>();
+            Scanner instructioner;
+            try {
+                    instructioner = new Scanner(new File("Details/"+firstword+".txt"));
+                    instructioner.useDelimiter(",~ *\n*");
+                    while (instructioner.hasNext()){
+                            String key = " "+instructioner.next()+" ";
+                            String value = "";
+                            if(instructioner.hasNext())
+                                    value = instructioner.next();
+                            temp.put(key, value);
+                    }
+            } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+            }
+            return temp;
+		}
 
 }
