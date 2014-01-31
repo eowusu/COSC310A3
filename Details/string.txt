@@ -8,4 +8,6 @@ method, methods,~ A named group of declarations and programming statements that 
 
 parsing,~ Usually done by the compiler, parsing is the process of sequencial source program instructions or some user defined interface, breaks a given object into pieces and manages it by other programming.,~
 
+append, append method, appends, appends method~ The append() method concatenates the string representation of any other type of data to the end of the invoking StringBuffer object.,~
+
 
