@@ -127,9 +127,9 @@ handler, handling, exception handling, exception handler,~ Exception handling us
 
 heap, heaps,~ Heap is a binary tree data structure that satisfies the heap property: If A is a parent node of B then the key of node A is ordered with respect to the key of node B with the same ordering applying across the heap.,~
 
-hierarchy, inheritance,~ Hierarchy allows a class to be a subclass of one other class, or superclass, and to implement zero or more interfaces. This allows the subclasses to inherit variables and methods from its superclass,~
-
 hexadecimal,~ The base-16 number system, often used as an abbreviated representation of binary strings.,~
+
+hierarchy, inheritance,~ Hierarchy allows a class to be a subclass of one other class, or superclass, and to implement zero or more interfaces. This allows the subclasses to inherit variables and methods from its superclass,~
 
 identifier,~ Any name that a programmer makes up to use in a program, such as a class name or variable name.,~
 
@@ -169,9 +169,9 @@ int, ints, integer, integers, whole number, whole numbers,~ By default, the int 
 
 internet,~ Internet is the most pervasive wide-area network in the world; it has become the primary vehicle for computer-to-computer communication.,~
 
-interpreter,~ Similar to the compiler, interpreter is program that translates and executes code on a particular machine.,~
-
 interface,~ A Java reserved word that is used to define a set of abstract methods that will be implemented by particular classes. (2) The set of messages to which an object responds, defined by the methods that can be invoked from outside of the object. (3) The techniques through which a human user interacts with a program, often graphically.,~
+
+interpreter,~ Similar to the compiler, interpreter is program that translates and executes code on a particular machine.,~
 
 iteration,~ An iteration is one round or loop the program takes when executing a body of a repetition statement.,~
 
@@ -179,11 +179,11 @@ java,~ Java is a programming language used throughout this text to demonstrate s
 
 late binding, dynamic binding,~ Late binding is a runtime process of looking up a declaration, by name, that corresponds to a uniquely specified type. It does not involve type checking during compilation, when referencing libraries, including an object, is not required.,~
 
-list,~ List is a GUI component that presents a list of items from which the user can choose. The current selection is highlighted in the list.,~
-
 linear search,~ Linear search is a search algorithm in which each item in the list is compared to the target value until the target is found or the list isexhausted. See also binary search.,~
 
 linked-List,~ Linked List is a dynamic data structure in which objects are linked using references.,~
+
+list,~ List is a GUI component that presents a list of items from which the user can choose. The current selection is highlighted in the list.,~
 
 local, local variable,~ Local variable is a variable defined within a method, which does not exist except during the execution of the method.,~
 
