@@ -1,8 +1,0 @@
-object, objects,~ An instance of a class.,~
-
-variable, variables,~ Variables have a type. This type can be a base type, such as int or double, or an Object such as String.  Variables also need to have a name such as 'number'.,~
-
-writing to files, writing, saving,~ One way for programs to store information permanently is to write the information to a file.,~
-
-class, classes,~ A class is a blueprint of an object—the model that defines the variables and methods an object will contain when instantiated.,~
-

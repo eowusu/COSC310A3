@@ -1,3 +1,4 @@
-int,~ Where are you having a hard time? ,~
-int,~ What area do you need help with? ,~
-int,~ Can I help you? ,~
+what,~ this, this statement ,~
+up,~ Do you need help with anything? ,~
+with,~ Do you need help with anything? ,~
+what+is+the+dealio,~ G'day ,~
