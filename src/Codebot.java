@@ -1,5 +1,10 @@
 import java.awt.Desktop;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -159,8 +164,8 @@ public class Codebot {
                 String newresponse = scan.nextLine();
                 newresponse = Punctuation.space(newresponse);
                 if (Comparison.contains(affirmations, newresponse)){ //if they say yes, search it
+                	String q = response.replace(' ', '+').substring(1,response.length()-1);
                         try {
-                                String q = response.replace(' ', '+').substring(1,response.length()-1);
                                 Desktop desktop = java.awt.Desktop.getDesktop();
                                 URL oURL = new URL("https://www.google.com/#q="+q);
                                 desktop.browse(oURL.toURI());
@@ -168,6 +173,7 @@ public class Codebot {
                         catch (Exception e) {
                                 e.printStackTrace();
                                 }
+                        writeSearch(q,lastSaid);
                         prompt();
                 }
                 else{ //otherwise prompt again
@@ -176,7 +182,31 @@ public class Codebot {
                 
         }
 
-        /*
+        
+        //this method will store the google search in a file so we will be able to see what people are asking us to search
+        //that way we will know what topics to add in
+        private void writeSearch(String q, String lastSaid2) {
+        	String storethis = q+",~"+lastSaid+",~\n"; //their response is the key, and the value is what we said last
+        	try {
+     
+    			File file = new File("SearchStorage.txt");
+     
+    			// if file doesnt exists, then create it
+    			if (!file.exists()) {
+    				file.createNewFile();
+    			}
+    			FileWriter fw = new FileWriter(file.getAbsoluteFile(),true);
+    			BufferedWriter bw = new BufferedWriter(fw);
+    			//bw.write(storethis);
+    			bw.append(storethis);
+    			bw.close();
+     
+    		} catch (IOException e) {
+    			e.printStackTrace();
+    		}
+		}
+
+		/*
          * This method provides further instruction based on the input topic
          */
         private void instruct(String topic) {
