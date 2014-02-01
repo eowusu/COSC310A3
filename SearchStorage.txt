@@ -2,3 +2,6 @@ what,~ this, this statement ,~
 up,~ Do you need help with anything? ,~
 with,~ Do you need help with anything? ,~
 what+is+the+dealio,~ G'day ,~
+The+prof+said+something+about+extend+today,~ Where are you having a hard time? ,~
+Does+the+class+need+to+be+any+different+somewhere+else+?,~ how, what, example, use ,~
+What+does+it+mean,~ search, searching ,~
