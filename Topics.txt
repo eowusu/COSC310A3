@@ -30,7 +30,7 @@ bit, bits,~ A bit is a binary digit, either 0 or 1.,~
 
 block, blocks,~ A block is a group of programming statements or line of codes that is inbetween a set of braces '{}'.,~
 
-boolean, true/false, true or false, true, false, booleans~ The boolean data type has only two possible values: true and false. Use this data type for simple flags that track true/false conditions. This data type represents one bit of information, but its "size" isn't something that's precisely defined.,~
+boolean, true/false, true or false, true, false, booleans,~ The boolean data type has only two possible values: true and false. Use this data type for simple flags that track true/false conditions. This data type represents one bit of information, but its "size" isn't something that's precisely defined.,~
 
 break, break statements,~ Break is a Java reserved word used to interrupt the flow of control by breaking out of the current loop or switch statement.,~
 
@@ -194,7 +194,7 @@ long, longs,~ The long data type is a 64-bit two's complement integer. The signe
 
 machine language,~ Machine language is a native language of a particular CPU. Any software that runs on a particular CPU must be translated into its machine language.,~
 
-memory, ram~ Hardware devices that store programs and data. There are 2 types of memory, primary and secondary memory.,~
+memory, ram,~ Hardware devices that store programs and data. There are 2 types of memory, primary and secondary memory.,~
 
 method, methods,~ A named group of declarations and programming statements that can be invoked (executed) when needed. A method is part of a class.,~
 
@@ -332,4 +332,4 @@ white spaces, spaces,~ White Spaces are Spaces, tabs, and blank lines that are u
 
 wrapper, wrapper class,~ Wrapper Class is a class designed to store a primitive type in an object. Usually used when an object reference is needed and a primitive type would not suffice.,~
 
-www, world wide web,~ Software that makes the exchange of information across a network easier by providing a common user interface for multiple types of information. Web browsers are used to retrieve and format HTML documents.,
+www, world wide web,~ Software that makes the exchange of information across a network easier by providing a common user interface for multiple types of information. Web browsers are used to retrieve and format HTML documents.,~

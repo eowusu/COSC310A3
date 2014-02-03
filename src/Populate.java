@@ -283,7 +283,7 @@ public class Populate {
                             temp.put(key, value);
                     }
             } catch (FileNotFoundException e) {
-                    e.printStackTrace();
+                    temp = null;
             }
             return temp;
 		}

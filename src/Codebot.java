@@ -160,11 +160,12 @@ public class Codebot {
          */
         private void google(String response) {
         		details = null;
+        		String q = response.replace(' ', '+').substring(1,response.length()-1);
+        		writeSearch(q,lastSaid);
                 System.out.println("Sorry, I am not that smart...yet\nWant me to search that for you?");
                 String newresponse = scan.nextLine();
                 newresponse = Punctuation.space(newresponse);
                 if (Comparison.contains(affirmations, newresponse)){ //if they say yes, search it
-                	String q = response.replace(' ', '+').substring(1,response.length()-1);
                         try {
                                 Desktop desktop = java.awt.Desktop.getDesktop();
                                 URL oURL = new URL("https://www.google.com/#q="+q);
@@ -173,7 +174,6 @@ public class Codebot {
                         catch (Exception e) {
                                 e.printStackTrace();
                                 }
-                        writeSearch(q,lastSaid);
                         prompt();
                 }
                 else{ //otherwise prompt again
