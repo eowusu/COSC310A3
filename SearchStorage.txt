@@ -7,3 +7,5 @@ Does+the+class+need+to+be+any+different+somewhere+else+?,~ how, what, example, u
 What+does+it+mean,~ search, searching ,~
 how,~ double, doubles ,~
 how,~ double, doubles ,~
+how+do+i+use+int,~ double, doubles ,~
+yes,~ double, doubles ,~
