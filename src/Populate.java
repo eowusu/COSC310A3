@@ -266,6 +266,28 @@ public class Populate {
                 }
                 return temp;
         }
+        
+        public static ArrayList<String> topiclist(){
+            ArrayList<String> temp = new ArrayList<String>();
+            Scanner topicer;
+            try {
+                    topicer = new Scanner(new File("Topics.txt"));
+                    topicer.useDelimiter(",~ *\n*");
+                    while (topicer.hasNext()){
+                            String[] key = topicer.next().split(",");
+                            //String value = "";
+                            if(topicer.hasNext())
+                                    topicer.next();
+                            for (int i = 0; i < key.length; i++)
+                            	temp.add(key[i]);
+                    }
+            } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+            }
+            return temp;
+    }
+        
+        
 
 		public static HashMap<String,String> details(String firstword) {
 			if(firstword.charAt(firstword.length()-1) == ',')
