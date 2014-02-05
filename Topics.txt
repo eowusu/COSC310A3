@@ -56,7 +56,7 @@ color, colors,~ Color can be controlled by accessing the Color class.  The Color
 
 comment, comments,~ A comment is a programming language construct that allows a programmer to embed humanreadable annotations into the source code.  Comments are ignored by the computer when your program is run,~
 
-comparator,~ Comparator ,defined in java.util package, is used in interfaces to implement sorting.
+comparator,~ Comparator ,defined in java.util package, is used in interfaces to implement sorting.,~
 
 comparable,~ Comparable is used to implement natural ordering of object. Java's API String, Date and wrapper classes implements Comparable interface.Its always good practice to override compareTo() for value objects.,~
 
@@ -76,7 +76,7 @@ debugger, dubug, debugging, debug,~ A debugger is a software tool that allows a 
 
 decimal,~ Decimal is a base-10 number system, which you use in everyday life.,~
 
-decrement, decrement operator, decrements~ Decrement operator is an operator, denoted by '--', is used as assignment operator. x-- stands for x = x - 1. Eg. x = 8 then y = --x will decrement the value of x to 7 then store it in y where as y = x-- will store 8 in y then decrement the value of x.,~
+decrement, decrement operator, decrements,~ Decrement operator is an operator, denoted by '--', is used as assignment operator. x-- stands for x = x - 1. Eg. x = 8 then y = --x will decrement the value of x to 7 then store it in y where as y = x-- will store 8 in y then decrement the value of x.,~
 
 default,~ Default is a Java reserved word that is used to indicate the default case of a switch statement, used if no other cases match.,~
 
