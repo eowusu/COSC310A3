@@ -10,6 +10,7 @@ public class Punctuation {
          * This method spaces out all words and gets rid of punctuations.
          */
         public static String space(String response) {
+        	if(response.length() > 0){
                 if(response.charAt(0) != ' ')
                         response = " "+response;
                 if(response.charAt(response.length()-1) != ' ')
@@ -18,7 +19,8 @@ public class Punctuation {
                 response = response.replace("!", " !");
                 response = response.replace(".", " .");
                 response = response.replace("?", " ?");
-                return response;
+        	}
+            return response;
         }
 
 }
