@@ -5,3 +5,7 @@ what+is+the+dealio,~ G'day ,~
 The+prof+said+something+about+extend+today,~ Where are you having a hard time? ,~
 Does+the+class+need+to+be+any+different+somewhere+else+?,~ how, what, example, use ,~
 What+does+it+mean,~ search, searching ,~
+how,~ double, doubles ,~
+how,~ double, doubles ,~
+how+do+i+use+int,~ double, doubles ,~
+yes,~ double, doubles ,~
