@@ -38,7 +38,7 @@ public class Codebot {
         private Scanner scan;
         private String lastSaid;
         private String lastSaidType;
-        private Matcher match;
+        //private Matcher match;
         
         /*
          * This is our constructor. It populates the library and begins the session
@@ -61,7 +61,7 @@ public class Codebot {
                 scan = new Scanner(System.in);
                 lastSaid="";
                 lastSaidType="";
-                match = new Matcher();
+                //match = new Matcher();
                 beginSession();
                 
         }
@@ -88,7 +88,7 @@ public class Codebot {
                         prompt();
                 }
                 else{
-                		response = match.fixSentence(response);
+                		//response = match.fixSentence(response);
                         response = Punctuation.space(response);        //correctly format their response for searching through libraries
                         if (Comparison.contains(greetings,response)){
                                 /*
