@@ -8,6 +8,9 @@ import java.util.Scanner;
 public class Populate {
         /*
          * The purpose of this class is to put our library into RAM for fast access.
+         * For arraylist populations, words are separated by commas
+         * For hashmap populations, commas are used to separate multiple words in a key 
+         * and ,~ separates the key from the value
          */
 
         /*
@@ -267,6 +270,10 @@ public class Populate {
                 return temp;
         }
         
+        
+        /*
+         * This method populates our topiclist
+         */
         public static ArrayList<String> topiclist(){
             ArrayList<String> temp = new ArrayList<String>();
             Scanner topicer;
@@ -288,7 +295,9 @@ public class Populate {
     }
         
         
-
+        /*
+         * This method populates our details
+         */
 		public static HashMap<String,String> details(String firstword) {
 			if(firstword.charAt(firstword.length()-1) == ',')
 				firstword = firstword.substring(0, firstword.length()-1);
