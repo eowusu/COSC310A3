@@ -7,7 +7,7 @@ public class Punctuation {
          */
 
         /*
-         * This method spaces out all words and gets rid of punctuations.
+         * This method spaces out all words and separates punctuations from them
          */
         public static String space(String response) {
         	if(response.length() > 0){
