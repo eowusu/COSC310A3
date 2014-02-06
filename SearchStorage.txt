@@ -9,3 +9,7 @@ how,~ double, doubles ,~
 how,~ double, doubles ,~
 how+do+i+use+int,~ double, doubles ,~
 yes,~ double, doubles ,~
+yes,~ double, doubles ,~
+how+do+i+use+it,~ double, doubles ,~
+how,~ double, doubles ,~
+it,~ Where are you having a hard time? ,~

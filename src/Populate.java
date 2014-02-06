@@ -27,6 +27,21 @@ public class Populate {
                 }
                 return temp;
         }
+        
+        public static ArrayList<String> common() {
+            ArrayList<String> temp = new ArrayList<String>();
+            Scanner common;
+            try {
+                    common = new Scanner(new File("mostcommon.txt"));
+                    common.useDelimiter(", *");
+                    while (common.hasNext()){
+                            temp.add(" "+common.next()+" ");
+                    }
+            } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+            }
+            return temp;
+    }
 
         /*
          * This method populates the list of closures
