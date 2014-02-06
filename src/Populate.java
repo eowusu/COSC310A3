@@ -8,6 +8,11 @@ import java.util.Scanner;
 public class Populate {
         /*
          * The purpose of this class is to put our library into RAM for fast access.
+         * For arraylist populations, words are separated by commas
+         * For hashmap populations, commas are used to separate multiple words in a key 
+         * and ,~ separates the key from the value.  This allows us to store a lot of information
+         * in text files without needing to search through it all every time that a user enters 
+         * information to the system.
          */
 
         /*
@@ -27,6 +32,21 @@ public class Populate {
                 }
                 return temp;
         }
+        
+        public static ArrayList<String> common() {
+            ArrayList<String> temp = new ArrayList<String>();
+            Scanner common;
+            try {
+                    common = new Scanner(new File("mostcommon.txt"));
+                    common.useDelimiter(", *");
+                    while (common.hasNext()){
+                            temp.add(" "+common.next()+" ");
+                    }
+            } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+            }
+            return temp;
+    }
 
         /*
          * This method populates the list of closures
@@ -267,6 +287,10 @@ public class Populate {
                 return temp;
         }
         
+        
+        /*
+         * This method populates our topiclist
+         */
         public static ArrayList<String> topiclist(){
             ArrayList<String> temp = new ArrayList<String>();
             Scanner topicer;
@@ -288,7 +312,9 @@ public class Populate {
     }
         
         
-
+        /*
+         * This method populates our details
+         */
 		public static HashMap<String,String> details(String firstword) {
 			if(firstword.charAt(firstword.length()-1) == ',')
 				firstword = firstword.substring(0, firstword.length()-1);
