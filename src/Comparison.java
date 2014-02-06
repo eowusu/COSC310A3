@@ -7,7 +7,8 @@ import java.util.Scanner;
 public class Comparison {
         /*
          * The purpose of this class is to search through the libraries to determine if a term is contained in
-         * the given library
+         * the given library.  The libraries are defined in the text files and correspond to different parts of conversation,
+         * such as greetings, and different topics such as arrays.
          */
 
         /*

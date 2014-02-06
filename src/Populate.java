@@ -10,7 +10,9 @@ public class Populate {
          * The purpose of this class is to put our library into RAM for fast access.
          * For arraylist populations, words are separated by commas
          * For hashmap populations, commas are used to separate multiple words in a key 
-         * and ,~ separates the key from the value
+         * and ,~ separates the key from the value.  This allows us to store a lot of information
+         * in text files without needing to search through it all every time that a user enters 
+         * information to the system.
          */
 
         /*
