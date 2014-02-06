@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -14,7 +13,10 @@ import java.util.Scanner;
 
 public class Codebot {
         /*
-         * This class is responsible for handling all user interaction. It is the central class.
+         * This class is responsible for handling all user interaction. It is the central class. This class gathers information
+         * from the other classes and uses that information to attempt to answer user questions.  This class also handles
+         * regular parts of conversation such as greetings.  If the system is unable to answer a user question then this class
+         * will perform an internet search for the topic and show the user the resulting webpage.
          */
 
         /*
@@ -38,7 +40,7 @@ public class Codebot {
         private Scanner scan;
         private String lastSaid;
         private String lastSaidType;
-        private Matcher match;
+        //private Matcher match;
         
         /*
          * This is our constructor. It populates the library and begins the session
@@ -61,7 +63,7 @@ public class Codebot {
                 scan = new Scanner(System.in);
                 lastSaid="";
                 lastSaidType="";
-                match = new Matcher();
+                //match = new Matcher();
                 beginSession();
                 
         }
@@ -88,7 +90,7 @@ public class Codebot {
                         prompt();
                 }
                 else{
-                		response = match.fixSentence(response);
+                		//response = match.fixSentence(response);
                         response = Punctuation.space(response);        //correctly format their response for searching through libraries
                         if (Comparison.contains(greetings,response)){
                                 /*

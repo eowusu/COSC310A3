@@ -3,11 +3,12 @@ public class Punctuation {
         
         /*
          * The main purpose of this class is to format each response to correspond with the way we store words in 
-         * our libraries. That way we can properly search through them
+         * our libraries. That way we can properly search through them.  Specifically, this class puts extra spaces around 
+         * words that are near punctuation as we do no store punctuation in out libraries.
          */
 
         /*
-         * This method spaces out all words and gets rid of punctuations.
+         * This method spaces out all words and separates punctuations from them
          */
         public static String space(String response) {
         	if(response.length() > 0){
