@@ -4,4 +4,4 @@ primary, primary memory,~ Also known as the main memory or RAM, primary is the s
 
 secondary, secondary memory,~ Secondary memory is the storage space where software, data and information relatively stored permanently. This mainly includes hard drives, optical drives, disks, USBs and Flash storage devices. Eg. Storage Space in the basement, storage room at Storage Center where unused items are stored but are still accessable to the user.,~
 
-how,~ Information is stored from an input device, i.e. keyboard or scanner, to the RAM which is the main memory which saves the files in the Hard drive or USB stick, secondary memory.
+how,~ Information is stored from an input device, i.e. keyboard or scanner, to the RAM which is the main memory which saves the files in the Hard drive or USB stick, secondary memory.,~

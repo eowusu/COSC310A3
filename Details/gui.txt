@@ -1,4 +1,4 @@
-frames,~ Frames are used for a Java GUI-based application to display a program interface
+frames,~ Frames are used for a Java GUI-based application to display a program interface,~
 
 interface,~ A frame interface in a GUI consists of a primary panel, which is added to the frames content pane,~
 

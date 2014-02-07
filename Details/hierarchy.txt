@@ -1,4 +1,4 @@
-inheritance,~ In a hierarchy Object-oriented programming allows classes to inherit variables and methods from the extended parent class.,~
+inheritance,~ In a hierarchy Object-oriented programming allows classes to inherit implemented variables and methods from the extended parent class.,~
 
 structure,~ In the Java, each class is allowed to have one direct superclass, and each superclass has the potential for an unlimited number of subclasses.,~
 

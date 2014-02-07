@@ -156,15 +156,11 @@ inheritance,~ The ability to derive a new class from an existing one. Inherited 
 
 insertion sort,~ Insertion Sort is a sorting algorithm in which each value, one at a time, is inserted into a sorted subset of the entire list. See also selection sort.,~
 
-instance,~ An object created from a class. Multiple objects can be instantiated from a single class.,~
-
-instance method,~ A method that must be invoked through a particular instance of a class, as opposed to a class method.,~
-
-instance variable,~ A variable that must be referenced through a particular instance of a class, as opposed to a class variable.,~
+instance,~ An instance is an object created from a class. Multiple objects, be it instance methods or instance variables, can be instantiated from a single class.,~
 
 instantiate, instantiation,~ It is the act of creating an object from a class.,~
 
-int, ints, integer, integers, whole number, whole numbers,~ By default, the int data type is a 32-bit signed two's complement integer, which has a minimum value of -2^31 and a maximum value of 2^31 -1.,~
+int, ints, integer,a integers, whole number, whole numbers,~ By default, the int data type is a 32-bit signed two's complement integer, which has a minimum value of -2^31 and a maximum value of 2^31 -1.,~
 
 internet,~ Internet is the most pervasive wide-area network in the world; it has become the primary vehicle for computer-to-computer communication.,~
 
@@ -182,7 +178,7 @@ linear search,~ Linear search is a search algorithm in which each item in the li
 
 linked-List,~ Linked List is a dynamic data structure in which objects are linked using references.,~
 
-list,~ List is a GUI component that presents a list of items from which the user can choose. The current selection is highlighted in the list.,~
+list,~ List is a GUI component that presents a list of items from which the user can choose.,~
 
 local, local variable,~ Local variable is a variable defined within a method, which does not exist except during the execution of the method.,~
 
@@ -222,7 +218,7 @@ overloading,~ Assigning additional meaning to a programming language construct, 
 
 overriding,~ The process of modifying the definition of an inherited method to suit the purposes of the subclass.,~
 
-package,~ Java reserved word that is used to specify a group of related classes.,~
+package, packages,~ Java reserved word that is used to specify a group of related classes.,~
 
 panel,~ A panel is a GUI container that holds and organizes other GUI components.,~
 
@@ -264,11 +260,11 @@ return,~ A Java reserved word that causes the flow of program execution to retur
 
 return type,~ The type of value returned from a method, specified before the method name in the method declaration. Could be void, which indicates that no value is returned.,~
 
-runtime, runtime error,~ A problem that occurs during program execution that causes the program to terminate abnormally.,~
-
-search, searching,~ The process of determining the existence or location of a target value within a list of values. Some examples include Binary Search and Linear search,~
+run time, run-time, runtime, runtime error,~ A problem that occurs during program execution that causes the program to terminate abnormally.,~
 
 scanner, scanner class,~ The Scanner class is a class in java.util, which allows the user to read values of various types.,~
+
+search, searching,~ The process of determining the existence or location of a target value within a list of values. Some examples include Binary Search and Linear search,~
 
 secondary, secondary memory,~ Secondary Memory is used in Hardware storage devices, such as magnetic disks or tapes, which store information in a relatively permanent manner.,~
 
