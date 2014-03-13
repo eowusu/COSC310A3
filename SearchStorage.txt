@@ -17,3 +17,24 @@ integras,~ Can I help you? ,~
 size,~ double, doubles ,~
 size,~ int, ints, integer, integers, whole number, whole numbers ,~
 yet,~ Do you need help? ,~
+his,~ Howdy ,~
+what+in+pepper,~ What topic is giving you trouble? ,~
+what+in+pepper,~ What topic is giving you trouble? ,~
+what+in+pepper,~ What can I help you with? ,~
+what+in+balance,~ What can I help you with? ,~
+what+in+balance,~ Where are you having a hard time? ,~
+who+in+balance,~ What can I help you with? ,~
+yes,~ int, ints, integer,a integers, whole number, whole numbers ,~
+who+in+balance,~ What topic is giving you trouble? ,~
+who+in+balance,~ What area do you need help with? ,~
+yes,~ What area do you need help with? ,~
+who+in+balance,~ What topic is giving you trouble? ,~
+who+in+the+balance,~ Where are you having a hard time? ,~
+who+in+the+balance,~ What topic is giving you trouble? ,~
+who+in+the+balance,~ What area do you need help with? ,~
+who+in+the+balance,~ What topic is giving you trouble? ,~
+who+in+the+balance,~ Where are you having a hard time? ,~
+who+in+the+balance,~ What topic is giving you trouble? ,~
+who+in+the+balance,~ Where are you having a hard time? ,~
+who+in+the+balance,~ What can I help you with? ,~
+who+in+the+balance,~ Where are you having a hard time? ,~

@@ -129,7 +129,7 @@ public class Matcher {
 				}
 				currentLD = 6;
 				//The print statement below can be used for diagnostic purposes
-				//System.out.println(arr[i] + "was compared to "+j+" words and was interpreted as " + prospect);
+				System.out.println(arr[i] + "was compared to "+j+" words and was interpreted as " + prospect);
 				arr[i] = prospect;
 			}
 		}

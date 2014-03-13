@@ -43,6 +43,10 @@ public class Codebot {
         private static Matcher match;
         
         private static winui win;
+        private static String[] tagged;
+        private static String raw;
+        private static boolean idk;
+        private static String lastThing;
         /*
          * This is our constructor. It populates the library and begins the session
          */
@@ -67,6 +71,7 @@ public class Codebot {
                 match = new Matcher();
                 
                 win = new winui();
+                idk = false;
                 System.out.println("2");
                 beginSession();
                 
@@ -83,8 +88,8 @@ public class Codebot {
                 System.out.println(greeting.substring(1));
                 win.upCon("<b>CodeBot: </b>"+ greeting.substring(1));
                 System.out.println("3");
-                String response = scan.nextLine() ;
-                respond(response);
+                //String response = scan.nextLine() ;
+                //respond(response);
                 
         }
 
@@ -97,6 +102,8 @@ public class Codebot {
                         prompt();
                 }
                 else{
+                		//tagged = Tag.tagit(response);
+                		raw = response;
                 		response = match.fixSentence(response);
                         response = Punctuation.space(response);        //correctly format their response for searching through libraries
                         if (Comparison.contains(greetings,response)){
@@ -105,6 +112,9 @@ public class Codebot {
                                  */
                                 prompt();
                         } 
+                        else if (Comparison.contains(affirmations, response)&&idk==true){
+                        	google2(lastThing);
+                        }
                         else if (Comparison.contains(affirmations, response)&&(lastSaidType.equals("prompt")||lastSaidType.equals("reprompt"))){
                                 /*
                                  * If codebot prompted them, i.e. "Do you want help?" and they respond with yes (or any other affirmation)
@@ -137,7 +147,7 @@ public class Codebot {
                                 instruct(response);
                         }
                         else if(details != null&&lastSaidType.equals("tutor")){
-                        	google(response);
+                        	google1(response);
                         }
                         else if (details == null&&Comparison.contains(topics, response)){
                             /*
@@ -162,7 +172,7 @@ public class Codebot {
                                 /*
                                  * In the worst case, codebot asks if they want it to look up the answer for them
                                  */
-                                google(response);
+                                google1(response);
                         }
                 }
         }
@@ -171,46 +181,50 @@ public class Codebot {
          * This method takes the user question and performs a google search in their default browser
          * This is the worst case scenario of codebot not knowing what to do :(
          */
-        private static void google(String response) {
+        private static void google1(String response) {
         		details = null;
         		String q = response.replace(' ', '+').substring(1,response.length()-1);
         		writeSearch(q,lastSaid);
-<<<<<<< HEAD
+
                 System.out.println("Sorry, I am not that smart...yet\nWant me to search that for you?");
                 win.upCon("<b>CodeBot: </b>"+ "Sorry, I am not that smart...yet\nWant me to search that for you?");
-=======
-        		
-        		String[] unknown = new String[5];
-        		
-        		unknown[0] = "Sorry, I am not that smart...yet\nWant me to search that for you?";
-        		unknown[1] = "I am uncertain of what you are talking about. \n I can can look it up if you want?";
-        		unknown[2] = "I don't know what you are talking about but i bet google knows. \n Want me to ask for you?";
-        		unknown[3] = "I bet Google knows what you are talking about, shall we ask?";
-        		unknown[4] = "I can't help you with that topic but I know some one who can. \n Lets ask?";
-        		
-        		int  h = (int)Math.random()*5;
-                System.out.println(unknown[h]);
-                
-                
->>>>>>> f05c7070db40205afd76137ac3e1061ee95bce35
-                String newresponse = scan.nextLine();
-                newresponse = Punctuation.space(newresponse);
-                if (Comparison.contains(affirmations, newresponse)){ //if they say yes, search it
-                        try {
+                System.out.println("after window update");
+                lastThing = raw;
+                idk = true;
+        }
+        
+        private static void google2(String str){
+        				str = Punctuation.space(str);
+                        String[] words = str.split(" ");
+                        tagged = Tag.tagit(str);
+                        StringBuffer query = new StringBuffer();
+                        System.out.println(str);
+                        System.out.println("tagged array size ="+tagged.length);
+                        
+                        for (int i = 0; i < tagged.length; i++){
+                        	System.out.println("array position: "+ i + "...");
+                        	if (tagged[i].contains("N")||tagged[i].contains("V")||tagged[i].contains("J")){
+                        		/////START HERE !!!!!!!
+                        		// THIS IS BRKEN!!!!!!!!
+                        		query.append(words[i+1]+"+");
+                        	}
+                        }
+                        if(query.length()>0){
+                        	query.deleteCharAt(query.length()-1); // removes last "+" sign
+                        }
+                		try {
                                 Desktop desktop = java.awt.Desktop.getDesktop();
-                                URL oURL = new URL("https://www.google.com/#q="+q);
+                                URL oURL = new URL("https://www.google.com/#q="+query);
+                                System.out.println("https://www.google.com/#q="+query);
                                 desktop.browse(oURL.toURI());
                                 }
                         catch (Exception e) {
                                 e.printStackTrace();
                                 }
+                		idk = false;
                         prompt();
-                }
-                else{ //otherwise prompt again
-                        prompt();
-                }
+                        }
                 
-        }
 
         
         //this method will store the google search in a file so we will be able to see what people are asking us to search

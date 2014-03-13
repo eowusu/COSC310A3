@@ -68,8 +68,14 @@ public class winui {
 	}
 	
 	public void upCon(String str){
+		System.out.println("in upCon");
+		String cap1 = editorPane.getText().substring(0,38);
+		String cap2 = editorPane.getText().substring(editorPane.getText().length()-16);
 		String text = editorPane.getText().substring(39, editorPane.getText().length()-16) +"<br>" + str;
+		System.out.println("updated window");
+		text = cap1+text+cap2;
 		System.out.println(text);
 		editorPane.setText(text);
+		System.out.println("finished upCon");
 	}
 }
