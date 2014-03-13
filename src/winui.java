@@ -11,6 +11,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import javax.swing.JEditorPane;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 
 public class winui {
@@ -41,6 +43,7 @@ public class winui {
 		frame.getContentPane().add(textArea);
 		
 		btnNewButton = new JButton("Enter");
+
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{

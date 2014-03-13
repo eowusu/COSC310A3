@@ -188,11 +188,22 @@ public class Codebot {
          */
         private static void search1(String response) {
         		details = null;
-        		String q = response.replace(' ', '+').substring(1,response.length()-1);
-        		writeSearch(q,lastSaid);
-
-                System.out.println("Sorry, I am not that smart...yet\nWant me to search that for you?");
-                win.upCon("<b>CodeBot: </b>"+ "Sorry, I am not that smart...yet\nWant me to search that for you?");
+        		//String q = response.replace(' ', '+').substring(1,response.length()-1);
+        		writeSearch(response,lastSaid);
+        		String[] idks = new String[5];
+        		
+        		idks[0] = "Hmm.. not too sure about that. Want me to take a look online for you?";
+        		idks[1] = "I don't have that information on hand. Should I see what information I can find online?";
+        		idks[2] = "I don't know but I can find out. Want me to find that for you?";
+        		idks[3] = "How am I supposed to know that? Give me a second while I find out.";
+        		idks[4] = "Sorry, I am not that smart...yet\nWant me to search that for you?";
+        		
+        		Random ran = new Random();
+        		int r = ran.nextInt(5);
+        		
+                System.out.println(idks[r]);
+                win.upCon("<b>CodeBot: </b>"+ idks[r]);
+                
                 System.out.println("after window update");
                 lastThing = raw;
                 idk = true;
