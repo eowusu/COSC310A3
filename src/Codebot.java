@@ -175,8 +175,24 @@ public class Codebot {
         		details = null;
         		String q = response.replace(' ', '+').substring(1,response.length()-1);
         		writeSearch(q,lastSaid);
+<<<<<<< HEAD
                 System.out.println("Sorry, I am not that smart...yet\nWant me to search that for you?");
                 win.upCon("<b>CodeBot: </b>"+ "Sorry, I am not that smart...yet\nWant me to search that for you?");
+=======
+        		
+        		String[] unknown = new String[5];
+        		
+        		unknown[0] = "Sorry, I am not that smart...yet\nWant me to search that for you?";
+        		unknown[1] = "I am uncertain of what you are talking about. \n I can can look it up if you want?";
+        		unknown[2] = "I don't know what you are talking about but i bet google knows. \n Want me to ask for you?";
+        		unknown[3] = "I bet Google knows what you are talking about, shall we ask?";
+        		unknown[4] = "I can't help you with that topic but I know some one who can. \n Lets ask?";
+        		
+        		int  h = (int)Math.random()*5;
+                System.out.println(unknown[h]);
+                
+                
+>>>>>>> f05c7070db40205afd76137ac3e1061ee95bce35
                 String newresponse = scan.nextLine();
                 newresponse = Punctuation.space(newresponse);
                 if (Comparison.contains(affirmations, newresponse)){ //if they say yes, search it
