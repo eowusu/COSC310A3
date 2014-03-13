@@ -61,7 +61,7 @@ public class Matcher {
     	String[] newArr = fixArr(arr);
     	String newSen = buildSen(newArr);
     	//The print statement below can be used to determine exactly how words are being interpreted
-    	//System.out.println("Sentence interpreted as: "+newSen);
+    	System.out.println("Sentence interpreted as: "+newSen);
     	
     	return newSen;
     }

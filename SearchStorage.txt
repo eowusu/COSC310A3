@@ -13,3 +13,7 @@ yes,~ double, doubles ,~
 how+do+i+use+it,~ double, doubles ,~
 how,~ double, doubles ,~
 it,~ Where are you having a hard time? ,~
+integras,~ Can I help you? ,~
+size,~ double, doubles ,~
+size,~ int, ints, integer, integers, whole number, whole numbers ,~
+yet,~ Do you need help? ,~
