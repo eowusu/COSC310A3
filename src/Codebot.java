@@ -41,6 +41,7 @@ public class Codebot {
         private static String lastSaid;
         private static String lastSaidType;
         private static Matcher match;
+        private static Wolf w;
         
         private static winui win;
         private static String[] tagged;
@@ -69,6 +70,7 @@ public class Codebot {
                 lastSaid="";
                 lastSaidType="";
                 match = new Matcher();
+                w = new Wolf();
                 
                 win = new winui();
                 idk = false;
@@ -113,7 +115,10 @@ public class Codebot {
                                 prompt();
                         } 
                         else if (Comparison.contains(affirmations, response)&&idk==true){
-                        	google2(lastThing);
+                        	search2(lastThing);
+                        }
+                        else if (Comparison.contains(negations,  response)&&idk == true){
+                        	prompt();
                         }
                         else if (Comparison.contains(affirmations, response)&&(lastSaidType.equals("prompt")||lastSaidType.equals("reprompt"))){
                                 /*
@@ -147,7 +152,7 @@ public class Codebot {
                                 instruct(response);
                         }
                         else if(details != null&&lastSaidType.equals("tutor")){
-                        	google1(response);
+                        	search1(response);
                         }
                         else if (details == null&&Comparison.contains(topics, response)){
                             /*
@@ -172,7 +177,7 @@ public class Codebot {
                                 /*
                                  * In the worst case, codebot asks if they want it to look up the answer for them
                                  */
-                                google1(response);
+                                search1(response);
                         }
                 }
         }
@@ -181,7 +186,7 @@ public class Codebot {
          * This method takes the user question and performs a google search in their default browser
          * This is the worst case scenario of codebot not knowing what to do :(
          */
-        private static void google1(String response) {
+        private static void search1(String response) {
         		details = null;
         		String q = response.replace(' ', '+').substring(1,response.length()-1);
         		writeSearch(q,lastSaid);
@@ -193,26 +198,32 @@ public class Codebot {
                 idk = true;
         }
         
-        private static void google2(String str){
-        				str = Punctuation.space(str);
+        private static void search2(String str){
+        				str = Punctuation.dpunc(str);
+        				System.out.println(str);
                         String[] words = str.split(" ");
                         tagged = Tag.tagit(str);
                         StringBuffer query = new StringBuffer();
                         System.out.println(str);
                         System.out.println("tagged array size ="+tagged.length);
-                        
+                        System.out.println("words array size ="+words.length);
+
                         for (int i = 0; i < tagged.length; i++){
                         	System.out.println("array position: "+ i + "...");
-                        	if (tagged[i].contains("N")||tagged[i].contains("V")||tagged[i].contains("J")){
-                        		/////START HERE !!!!!!!
-                        		// THIS IS BRKEN!!!!!!!!
-                        		query.append(words[i+1]+"+");
+                    		System.out.println("tagged[i]: "+ tagged[i]);
+                    		System.out.println("words[i]: " + words[i]);
+                        	if (tagged[i].equals("NN")||tagged[i].equals("NNP")||tagged[i].equals("NNPS")||tagged[i].equals("NNS")||tagged[i].equals("VB")||tagged[i].equals("VBD")||tagged[i].equals("VBG")||tagged[i].equals("VBN")||tagged[i].equals("VBP")){
+                        		query.append(words[i]+" ");
                         	}
                         }
                         if(query.length()>0){
-                        	query.deleteCharAt(query.length()-1); // removes last "+" sign
+                        	query.deleteCharAt(query.length()-1); // removes last " " 
                         }
-                		try {
+                        String ans = (String) w.trythis(query.toString());
+                        System.out.println("printing ans");
+                        System.out.println(ans);
+                        win.upCon("<b>CodeBot: </b>"+ ans);
+                		/*try {
                                 Desktop desktop = java.awt.Desktop.getDesktop();
                                 URL oURL = new URL("https://www.google.com/#q="+query);
                                 System.out.println("https://www.google.com/#q="+query);
@@ -220,7 +231,7 @@ public class Codebot {
                                 }
                         catch (Exception e) {
                                 e.printStackTrace();
-                                }
+                                }*/
                 		idk = false;
                         prompt();
                         }

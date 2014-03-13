@@ -24,4 +24,15 @@ public class Punctuation {
             return response;
         }
 
+        public static String dpunc(String response) {
+        	if(response.length() > 0){
+                if(response.charAt(response.length()-1) != ' ')
+                        response = response + " ";
+                response = response.replace(",", "");
+                response = response.replace("!", "");
+                response = response.replace(".", "");
+                response = response.replace("?", "");
+        	}
+            return response;
+        }
 }

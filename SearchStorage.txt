@@ -38,3 +38,30 @@ who+in+the+balance,~ What topic is giving you trouble? ,~
 who+in+the+balance,~ Where are you having a hard time? ,~
 who+in+the+balance,~ What can I help you with? ,~
 who+in+the+balance,~ Where are you having a hard time? ,~
+who+in+the+balance,~ What can I help you with? ,~
+who+in+the+balance,~ What can I help you with? ,~
+who+in+the+balance,~ What can I help you with? ,~
+who+in+the+balance,~ Where are you having a hard time? ,~
+who+in+the+balance,~ What can I help you with? ,~
+who+in+the+balance,~ Where are you having a hard time? ,~
+whom+in+the+balance,~ Where are you having a hard time? ,~
+who+in+the+balance,~ What can I help you with? ,~
+who+in+the+balance,~ What can I help you with? ,~
+what+in+quarter+complain,~ Do you need help? ,~
+who+in+the+balance,~ What can I help you with? ,~
+how,~ double, doubles ,~
+how,~ What topic is giving you trouble? ,~
+no,~ What topic is giving you trouble? ,~
+no,~ What topic is giving you trouble? ,~
+what+in+quarter+computing+?,~ What area do you need help with? ,~
+who+in+the+balance,~ Where are you having a hard time? ,~
+what+in+quarter+computing+?,~ What can I help you with? ,~
+who+in+the+balance,~ Where are you having a hard time? ,~
+what+in+quarter+computing+?,~ What can I help you with? ,~
+what+in+quarter+computing+?,~ Where are you having a hard time? ,~
+what+in+quarter+computing+?,~ Where are you having a hard time? ,~
+what+in+quarter+computing+?,~ What can I help you with? ,~
+what+in+quarter+computing+?,~ What area do you need help with? ,~
+who+in+the+balance,~ What topic is giving you trouble? ,~
+what+in+quarter+computing+?,~ Where are you having a hard time? ,~
+who+in+that+balance,~ Where are you having a hard time? ,~

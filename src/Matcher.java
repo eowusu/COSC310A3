@@ -111,6 +111,8 @@ public class Matcher {
 		int currentLD = 6;
 		String prospect = "";
 		for (int i=0; i<arr.length; i++){
+			if (arr[i].length() > 7)
+				return arr;
 			if (arr[i].length() > 1) {
 				for (j = 0; j < msize; j++) {
 					String tempSt = master.get(j).toLowerCase().replaceAll("\\s+","");

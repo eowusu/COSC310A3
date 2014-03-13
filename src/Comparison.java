@@ -58,4 +58,15 @@ public class Comparison {
                 return result;		//if a match was found, it will return true. otherwise it will return false
         }
 
+		public static boolean contains(String[] split, String title) {
+            boolean result = false;
+            for(int i = 0; i<split.length;i++){
+                    if (title.toLowerCase().contains(split[i].toLowerCase())){
+                            result = true;
+                            break;
+                    }
+            }
+            return result;
+		}
+
 }
