@@ -65,3 +65,5 @@ what+in+quarter+computing+?,~ What area do you need help with? ,~
 who+in+the+balance,~ What topic is giving you trouble? ,~
 what+in+quarter+computing+?,~ Where are you having a hard time? ,~
 who+in+that+balance,~ Where are you having a hard time? ,~
+ who in the balance ,~ Where are you having a hard time? ,~
+ who is bill gates ,~ What area do you need help with? ,~

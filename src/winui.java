@@ -1,18 +1,17 @@
-import javax.swing.JFrame;
-import javax.swing.JButton;
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
-import javax.swing.border.BevelBorder;
-import javax.swing.text.Document;
-import javax.swing.text.html.HTMLEditorKit;
-import javax.swing.JScrollPane;
-
-import java.awt.event.ActionListener;
+import java.awt.Desktop.Action;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.AbstractAction;
+import javax.swing.JButton;
 import javax.swing.JEditorPane;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.KeyStroke;
+import javax.swing.border.BevelBorder;
+import javax.swing.text.html.HTMLEditorKit;
 
 
 public class winui {
@@ -23,14 +22,32 @@ public class winui {
 	private JEditorPane editorPane;
 	private JScrollPane scrollPane;
 	private HTMLEditorKit kit;
+	private myAct eAct;
+	
 	public winui() {
 		initialize();
+        eAct = new myAct();
+        this.textArea.getInputMap().put( KeyStroke.getKeyStroke( "ENTER" ),
+                "doEnterAction" );
+        this.textArea.getActionMap().put( "doEnterAction", eAct );
+	}
+	
+	class myAct extends AbstractAction {
+	    public myAct() {
+	        
+	    }
+	    public void actionPerformed(ActionEvent e) {
+			Codebot.respond(textArea.getText());
+			textArea.setText("");
+	    }
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
+		
 		System.out.println("initializing window");
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
@@ -50,7 +67,8 @@ public class winui {
 				Codebot.respond(textArea.getText());
 				textArea.setText("");
 			}
-		});
+		} );
+		
 		btnNewButton.setBounds(327, 212, 117, 60);
 		frame.getContentPane().add(btnNewButton);
 		
