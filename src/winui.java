@@ -12,6 +12,7 @@ import javax.swing.JTextArea;
 import javax.swing.KeyStroke;
 import javax.swing.border.BevelBorder;
 import javax.swing.text.html.HTMLEditorKit;
+import java.awt.Color;
 
 
 public class winui {
@@ -50,13 +51,15 @@ public class winui {
 		
 		System.out.println("initializing window");
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setForeground(Color.BLACK);
+		frame.getContentPane().setForeground(Color.BLACK);
+		frame.setBounds(100, 100, 332, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		textArea = new JTextArea();
 		textArea.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		textArea.setBounds(6, 212, 318, 60);
+		textArea.setBounds(6, 212, 212, 60);
 		frame.getContentPane().add(textArea);
 		
 		btnNewButton = new JButton("Enter");
@@ -69,12 +72,8 @@ public class winui {
 			}
 		} );
 		
-		btnNewButton.setBounds(327, 212, 117, 60);
+		btnNewButton.setBounds(230, 212, 94, 60);
 		frame.getContentPane().add(btnNewButton);
-		
-		JPanel panel = new JPanel();
-		panel.setBounds(336, 6, 108, 194);
-		frame.getContentPane().add(panel);
 		
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(6, 6, 318, 194);

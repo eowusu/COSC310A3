@@ -11,7 +11,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 
-public class Codebot {
+public class CBnoUI {
         /*
          * This class is responsible for handling all user interaction. It is the central class. This class gathers information
          * from the other classes and uses that information to attempt to answer user questions.  This class also handles
@@ -43,15 +43,16 @@ public class Codebot {
         private static Matcher match;
         private static Wolf w;
         
-        private static winui win;
+        //private static winui win;
         private static String[] tagged;
         private static String raw;
         private static boolean idk;
         private static String lastThing;
+        public String out;
         /*
          * This is our constructor. It populates the library and begins the session
          */
-        public Codebot(){
+        public CBnoUI(){
                 greetings = Populate.greetings();
                 closures = Populate.closures();
                 prompts = Populate.prompts();
@@ -72,7 +73,7 @@ public class Codebot {
                 match = new Matcher();
                 w = new Wolf();
                 
-                win = new winui();
+                //win = new winui();
                 idk = false;
                 beginSession();
                 
@@ -87,7 +88,8 @@ public class Codebot {
                 lastSaid = greeting;
                 lastSaidType = "greeting";
                 System.out.println(greeting.substring(1));
-                win.upCon("<b>CodeBot: </b>"+ greeting.substring(1));
+                out = greeting.substring(1);
+                //win.upCon("<b>CodeBot: </b>"+ greeting.substring(1));
                 //String response = scan.nextLine() ;
                 //respond(response);
                 
@@ -96,8 +98,8 @@ public class Codebot {
         /*
          * This method takes a string as an input and selects a valid response
          */
-        public static void respond(String response) {
-        		win.upCon("<B>User: </b>" + response);
+        public void respond(String response) {
+        		//win.upCon("<B>User: </b>" + response);
                 if (response.isEmpty()){                        
                         prompt();
                 }
@@ -184,7 +186,7 @@ public class Codebot {
          * This method takes the user question and performs a google search in their default browser
          * This is the worst case scenario of codebot not knowing what to do :(
          */
-        private static void search1(String response) {
+        private void search1(String response) {
         		details = null;
         		//String q = response.replace(' ', '+').substring(1,response.length()-1);
         		writeSearch(response,lastSaid);
@@ -200,14 +202,14 @@ public class Codebot {
         		int r = ran.nextInt(5);
         		
                 System.out.println(idks[r]);
-                win.upCon("<b>CodeBot: </b>"+ idks[r]);
-                
+                // win.upCon("<b>CodeBot: </b>"+ idks[r]);
+                out = idks[r];
                 System.out.println("after window update");
                 lastThing = raw;
                 idk = true;
         }
         
-        private static void search2(String str){
+        private void search2(String str){
         				str = Punctuation.dpunc(str);
         				System.out.println(str);
                         String[] words = str.split(" ");
@@ -231,7 +233,8 @@ public class Codebot {
                         String ans = (String) w.trythis(query.toString());
                         System.out.println("printing ans");
                         System.out.println(ans);
-                        win.upCon("<b>CodeBot: </b>"+ ans);
+                        //win.upCon("<b>CodeBot: </b>"+ ans);
+                        out = ans;
                 		/*try {
                                 Desktop desktop = java.awt.Desktop.getDesktop();
                                 URL oURL = new URL("https://www.google.com/#q="+query);
@@ -273,7 +276,7 @@ public class Codebot {
 		/*
          * This method provides further instruction based on the input topic
          */
-        private static void instruct(String topic) {
+        private void instruct(String topic) {
                 lastSaidType = "detail";
                 boolean result = false;
                 Iterator<String> keySet = details.keySet().iterator();        // returns an iterable list of topics from the hashmap
@@ -296,20 +299,22 @@ public class Codebot {
                 lastSaid = currentKey;
                 lastSaidType = "tutor";
                 System.out.println(value);
-                win.upCon("<b>CodeBot: </b>"+ value);
+                //win.upCon("<b>CodeBot: </b>"+ value);
+                out = value;
                 topicprompt();
         }
 
         /*
          * This method acknowledges compliments
          */
-        private static void acknowledge() {
+        private void acknowledge() {
                 Random rand = new Random();
                 String acknowledgement = acknowledgements.get(rand.nextInt(acknowledgements.size()));
                 lastSaid = acknowledgement;
                 lastSaidType = "acknowledgement";
                 System.out.println(acknowledgement.substring(1));
-                win.upCon("<b>CodeBot: </b>"+ acknowledgement.substring(1));
+                //win.upCon("<b>CodeBot: </b>"+ acknowledgement.substring(1));
+                out = acknowledgement.substring(1);
                 //String response = scan.nextLine();
                // respond(response);
                 
@@ -318,7 +323,7 @@ public class Codebot {
         /*
          * Provides the user help when given a topic
          */
-        private static void tutor(String topic) {
+        private void tutor(String topic) {
                 boolean result = false;
                 Iterator<String> keySet = topics.keySet().iterator();        // returns an iterable list of topics from the hashmap
                 String currentKey = null;
@@ -343,18 +348,20 @@ public class Codebot {
                 details = Populate.details(firstword);
                 lastSaidType = "tutor";
                 System.out.println(value);
-                win.upCon("<b>CodeBot: </b>"+ value);
+                //win.upCon("<b>CodeBot: </b>"+ value);
+                out = value;
                 topicprompt();
         }
         
         /*
          * This method picks a random reprompt and prints it
          */
-        private static void topicprompt() {
+        private void topicprompt() {
                 Random rand = new Random();
                 String topicprompt = topicprompts.get(rand.nextInt(topicprompts.size()));
                 System.out.println(topicprompt.substring(1));  
-                win.upCon("<b>CodeBot: </b>"+ topicprompt.substring(1));
+                //win.upCon("<b>CodeBot: </b>"+ topicprompt.substring(1));
+                out = topicprompt.substring(1);
                // String response = scan.nextLine();
                 //respond(response); 
         }
@@ -363,12 +370,13 @@ public class Codebot {
         /*
          * This method asks if the user has any other questions
          */
-        private static void reprompt() {
+        private void reprompt() {
                 Random rand = new Random();
                 String reprompt = reprompts.get(rand.nextInt(reprompts.size()));
                 lastSaidType="reprompt";
                 System.out.println(reprompt.substring(1));  
-                win.upCon("<b>CodeBot: </b>"+ reprompt.substring(1));
+                //win.upCon("<b>CodeBot: </b>"+ reprompt.substring(1));
+                out = reprompt.substring(1);
                 //String response = scan.nextLine();
                 //respond(response);   
         }
@@ -377,24 +385,26 @@ public class Codebot {
         /*
          * This method stops the ball from rolling
          */
-        private static void endSession() {
+        private void endSession() {
                 Random rand = new Random();
                 String closure = closures.get(rand.nextInt(closures.size()));
                 System.out.println(closure.substring(1)); 
-                win.upCon("<b>CodeBot: </b>"+ closure.substring(1));
+                //win.upCon("<b>CodeBot: </b>"+ closure.substring(1));
+                out = closure.substring(1);
 
         }
 
         /*
          * This method prompts the user to ask a question.
          */
-        private static void prompt(){
+        private void prompt(){
                 Random rand = new Random();
                 String prompt = prompts.get(rand.nextInt(prompts.size()));
                 lastSaid = prompt;
                 lastSaidType = "prompt";
                 System.out.println(prompt.substring(1));
-                win.upCon("<b>CodeBot: </b>"+ prompt.substring(1));
+                //win.upCon("<b>CodeBot: </b>"+ prompt.substring(1));
+                out = prompt.substring(1);
                // String response = scan.nextLine();
                // respond(response);
         }
@@ -402,14 +412,14 @@ public class Codebot {
         /*
          * This method asks the user what he/she needs help with
          */
-        private static void inquire() {
+        private void inquire() {
                 Random rand = new Random();
                 String inquiry = inquiries.get(rand.nextInt(inquiries.size()));
                 lastSaid = inquiry;
                 lastSaidType = "inquiry";
                 System.out.println(inquiry.substring(1));
-                win.upCon("<b>CodeBot: </b>"+ inquiry.substring(1));
-
+                //win.upCon("<b>CodeBot: </b>"+ inquiry.substring(1));
+                out = inquiry.substring(1);
                 //String response = scan.nextLine();
                 //respond(response);
         }
